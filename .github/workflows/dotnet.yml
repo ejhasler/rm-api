@@ -13,23 +13,17 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    
+
     - name: Setup .NET
       uses: actions/setup-dotnet@v4
       with:
         dotnet-version: 8.0.x
-    
-    - name: Restore dependencies for src
-      run: dotnet restore ./src/src.generated.sln
 
-    - name: Build src solution
-      run: dotnet build --no-restore ./src/src.generated.sln
-    
-    - name: Restore dependencies for test
-      run: dotnet restore ./test/test.generated.sln
+    - name: Restore dependencies
+      run: dotnet restore ./src.generated.sln
 
-    - name: Build test solution
-      run: dotnet build --no-restore ./test/test.generated.sln
+    - name: Build solution
+      run: dotnet build --no-restore ./src.generated.sln
 
     - name: Run tests
-      run: dotnet test --no-build --verbosity normal ./test/test.generated.sln
+      run: dotnet test --no-build --verbosity normal ./src.generated.sln
