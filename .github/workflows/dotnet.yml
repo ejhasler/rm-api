@@ -21,13 +21,14 @@ jobs:
 
     - name: Restore dependencies
       run: dotnet restore src.generated.sln
-      working-directory: ./rm-api/RestaurantManagerAPI/src
+      working-directory: ./RestaurantManagerAPI
 
     - name: Build solution
       run: dotnet build --no-restore src.generated.sln
-      working-directory: ./rm-api/RestaurantManagerAPI/src
+      working-directory: ./RestaurantManagerAPI
 
     - name: Run tests
       run: dotnet test --no-build --verbosity normal src.generated.sln
-      working-directory: ./rm-api/RestaurantManagerAPI
+      working-directory: ./RestaurantManagerAPI
+
 
