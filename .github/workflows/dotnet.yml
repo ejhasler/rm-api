@@ -19,11 +19,14 @@ jobs:
       with:
         dotnet-version: 8.0.x
 
+    - name: Change directory to RestaurantManagerAPI
+      run: cd RestaurantManagerAPI
+
     - name: Restore dependencies
-      run: dotnet restore ./src.generated.sln
+      run: dotnet restore src.generated.sln
 
     - name: Build solution
-      run: dotnet build --no-restore ./src.generated.sln
+      run: dotnet build --no-restore src.generated.sln
 
     - name: Run tests
-      run: dotnet test --no-build --verbosity normal ./src.generated.sln
+      run: dotnet test --no-build --verbosity normal src.generated.sln
