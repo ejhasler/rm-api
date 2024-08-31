@@ -27,6 +27,10 @@ namespace RestaurantManagerAPI.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("ProductIds")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
                     b.HasKey("Id");
 
                     b.ToTable("MenuItems");
@@ -86,9 +90,8 @@ namespace RestaurantManagerAPI.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("PortionCount")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
+                    b.Property<double>("PortionCount")
+                        .HasColumnType("REAL");
 
                     b.Property<double>("PortionSize")
                         .HasColumnType("REAL");
@@ -105,13 +108,13 @@ namespace RestaurantManagerAPI.Migrations
             modelBuilder.Entity("RestaurantManagerAPI.Models.MenuItemProduct", b =>
                 {
                     b.HasOne("RestaurantManagerAPI.Models.MenuItem", "MenuItem")
-                        .WithMany("Products")
+                        .WithMany("MenuItemProducts")
                         .HasForeignKey("MenuItemId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("RestaurantManagerAPI.Models.Product", "Product")
-                        .WithMany()
+                        .WithMany("MenuItemProducts")
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -124,13 +127,13 @@ namespace RestaurantManagerAPI.Migrations
             modelBuilder.Entity("RestaurantManagerAPI.Models.OrderMenuItem", b =>
                 {
                     b.HasOne("RestaurantManagerAPI.Models.MenuItem", "MenuItem")
-                        .WithMany()
+                        .WithMany("OrderMenuItems")
                         .HasForeignKey("MenuItemId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("RestaurantManagerAPI.Models.Order", "Order")
-                        .WithMany("MenuItems")
+                        .WithMany("OrderMenuItems")
                         .HasForeignKey("OrderId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -142,12 +145,19 @@ namespace RestaurantManagerAPI.Migrations
 
             modelBuilder.Entity("RestaurantManagerAPI.Models.MenuItem", b =>
                 {
-                    b.Navigation("Products");
+                    b.Navigation("MenuItemProducts");
+
+                    b.Navigation("OrderMenuItems");
                 });
 
             modelBuilder.Entity("RestaurantManagerAPI.Models.Order", b =>
                 {
-                    b.Navigation("MenuItems");
+                    b.Navigation("OrderMenuItems");
+                });
+
+            modelBuilder.Entity("RestaurantManagerAPI.Models.Product", b =>
+                {
+                    b.Navigation("MenuItemProducts");
                 });
 #pragma warning restore 612, 618
         }

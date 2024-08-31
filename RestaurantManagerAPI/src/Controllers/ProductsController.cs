@@ -1,111 +1,174 @@
 using Microsoft.AspNetCore.Mvc;
 using RestaurantManagerAPI.Models;
 using RestaurantManagerAPI.Services;
+using RestaurantManagerAPI.DTOs;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using System.Linq;
 
-namespace RestaurantManagerAPI.Controllers;
-
-/// <summary>
-/// Represents a controller for managing products in the restaurant stock.
-/// </summary>
-/// <author>Even Johan Pereira Haslerud</author>
-/// <date>29.08.2021</date>
-[Route("api/[controller]")]
-[ApiController]
-public class ProductsController : ControllerBase
+namespace RestaurantManagerAPI.Controllers
 {
-    private readonly IProductService _productService;
-
     /// <summary>
-    /// Initializes a new instance of the <see cref="ProductsController"/> class.
+    /// Controller for managing products in the restaurant stock.
     /// </summary>
-    public ProductsController(IProductService productService)
+    [Route("api/[controller]")]
+    [ApiController]
+    public class ProductsController : ControllerBase
     {
-        _productService = productService;
-    }
+        private readonly IProductService _productService;
 
-    /// <summary>
-    /// Gets all products from the database.
-    /// </summary>
-    /// <returns>All the products in the database</returns>
-    [HttpGet]
-    public async Task<ActionResult<IEnumerable<Product>>> GetProducts()
-    {
-        var products = await _productService.GetAllProductsAsync();
-        return Ok(products);
-    }
-
-    /// <summary>
-    /// Gets a product by its unique identifier.
-    /// </summary>
-    /// <param name="id">The unique identifier of the product.</param>
-    /// <returns>The product with the specified unique identifier.</returns>
-    [HttpGet("{id}")]
-    public async Task<ActionResult<Product>> GetProduct(int id)
-    {
-        if (id <= 0)
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProductsController"/> class.
+        /// </summary>
+        public ProductsController(IProductService productService)
         {
-            return BadRequest("Invalid product ID.");
+            _productService = productService;
         }
 
-        var product = await _productService.GetProductByIdAsync(id);
-        if (product == null)
+        /// <summary>
+        /// Gets all products.
+        /// </summary>
+        /// <returns>A list of all products.</returns>
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<ProductReadDto>>> GetProducts()
         {
-            return NotFound();
-        }
-        return Ok(product);
-    }
+            var products = await _productService.GetAllProductsAsync();
 
-    /// <summary>
-    /// Adds a new product to the database.
-    /// </summary>
-    [HttpPost]
-    public async Task<ActionResult<Product>> AddProduct([FromBody] Product product)
-    {
-        // Check model validation
-        if (!ModelState.IsValid)
-        {
-            return BadRequest(ModelState);
-        }
+            var productReadDtos = products.Select(p => new ProductReadDto
+            {
+                Id = p.Id,
+                Name = p.Name,
+                PortionCount = p.PortionCount,
+                Unit = p.Unit,
+                PortionSize = p.PortionSize
+            });
 
-        var newProduct = await _productService.AddProductAsync(product);
-        return CreatedAtAction(nameof(GetProduct), new { id = newProduct.Id }, newProduct);
-    }
-
-    /// <summary>
-    /// Updates an existing product in the database.
-    /// </summary>
-    [HttpPut("{id}")]
-    public async Task<IActionResult> UpdateProduct(int id, [FromBody] Product product)
-    {
-        if (id != product.Id)
-        {
-            return BadRequest("Product ID mismatch.");
+            return Ok(productReadDtos);
         }
 
-        // Check model validation
-        if (!ModelState.IsValid)
+        /// <summary>
+        /// Gets a product by ID.
+        /// </summary>
+        /// <param name="id">The ID of the product.</param>
+        /// <returns>The product with the specified ID.</returns>
+        [HttpGet("{id}")]
+        public async Task<ActionResult<ProductReadDto>> GetProduct(int id)
         {
-            return BadRequest(ModelState);
+            if (id <= 0)
+            {
+                return BadRequest("Invalid product ID.");
+            }
+
+            var product = await _productService.GetProductByIdAsync(id);
+            if (product == null)
+            {
+                return NotFound();
+            }
+
+            var productReadDto = new ProductReadDto
+            {
+                Id = product.Id,
+                Name = product.Name,
+                PortionCount = product.PortionCount,
+                Unit = product.Unit,
+                PortionSize = product.PortionSize
+            };
+
+            return Ok(productReadDto);
         }
 
-        await _productService.UpdateProductAsync(product);
-        return NoContent();
-    }
-
-    /// <summary>
-    /// Deletes a product from the database.
-    /// </summary>
-    [HttpDelete("{id}")]
-    public async Task<IActionResult> DeleteProduct(int id)
-    {
-        if (id <= 0)
+        /// <summary>
+        /// Adds a new product.
+        /// </summary>
+        /// <param name="productCreateDto">The product data transfer object (DTO) containing the new product details.</param>
+        /// <returns>The added product.</returns>
+        [HttpPost]
+        public async Task<ActionResult<ProductReadDto>> AddProduct([FromBody] ProductCreateDto productCreateDto)
         {
-            return BadRequest("Invalid product ID.");
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var product = new Product
+            {
+                Name = productCreateDto.Name,
+                PortionCount = productCreateDto.PortionCount,
+                Unit = productCreateDto.Unit,
+                PortionSize = productCreateDto.PortionSize
+            };
+
+            var newProduct = await _productService.AddProductAsync(product);
+
+            var productReadDto = new ProductReadDto
+            {
+                Id = newProduct.Id,
+                Name = newProduct.Name,
+                PortionCount = newProduct.PortionCount,
+                Unit = newProduct.Unit,
+                PortionSize = newProduct.PortionSize
+            };
+
+            return CreatedAtAction(nameof(GetProduct), new { id = productReadDto.Id }, productReadDto);
         }
 
-        await _productService.DeleteProductAsync(id);
-        return NoContent();
+        /// <summary>
+        /// Updates an existing product.
+        /// </summary>
+        /// <param name="id">The ID of the product to update.</param>
+        /// <param name="productUpdateDto">The updated product data transfer object (DTO).</param>
+        /// <returns>A status indicating the result of the update operation.</returns>
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateProduct(int id, [FromBody] ProductUpdateDto productUpdateDto)
+        {
+            if (id != productUpdateDto.Id)
+            {
+                return BadRequest("Product ID mismatch.");
+            }
+
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var existingProduct = await _productService.GetProductByIdAsync(id);
+            if (existingProduct == null)
+            {
+                return NotFound();
+            }
+
+            existingProduct.Name = productUpdateDto.Name;
+            existingProduct.PortionCount = productUpdateDto.PortionCount;
+            existingProduct.Unit = productUpdateDto.Unit;
+            existingProduct.PortionSize = productUpdateDto.PortionSize;
+
+            await _productService.UpdateProductAsync(existingProduct);
+
+            return NoContent();
+        }
+
+        /// <summary>
+        /// Deletes a product by ID.
+        /// </summary>
+        /// <param name="id">The ID of the product to delete.</param>
+        /// <returns>A status indicating the result of the delete operation.</returns>
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteProduct(int id)
+        {
+            if (id <= 0)
+            {
+                return BadRequest("Invalid product ID.");
+            }
+
+            var product = await _productService.GetProductByIdAsync(id);
+            if (product == null)
+            {
+                return NotFound();
+            }
+
+            await _productService.DeleteProductAsync(id);
+
+            return NoContent();
+        }
     }
 }

@@ -1,6 +1,10 @@
 using Microsoft.EntityFrameworkCore;
 using RestaurantManagerAPI.Data;
 using RestaurantManagerAPI.Services;
+using RestaurantManagerAPI.Repositories; // Adjust the namespace to match your actual repository location
+using Microsoft.OpenApi.Models;
+using RestaurantManagerAPI.Application.Services;
+using RestaurantManagerAPI.Data.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,23 +15,49 @@ builder.Services.AddControllers();
 builder.Services.AddDbContext<RestaurantContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-// Register your services with the DI container
+// Register services with the DI container
 builder.Services.AddScoped<IProductService, ProductService>();
+builder.Services.AddScoped<IMenuItemService, MenuItemService>();
+builder.Services.AddScoped<IOrderService, OrderService>();
+
+// Register repositories with the DI container
+builder.Services.AddScoped<IProductRepository, ProductRepository>();
+builder.Services.AddScoped<IMenuItemRepository, MenuItemRepository>(); // Assuming you have these repositories
+builder.Services.AddScoped<IOrderRepository, OrderRepository>(); // Assuming you have these repositories
 
 // Add Swagger for API documentation
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(c =>
+{
+    c.SwaggerDoc("v1", new OpenApiInfo 
+    { 
+        Title = "RestaurantManagerAPI", 
+        Version = "v1",
+        Description = "API for managing restaurant operations, including products, menu items, and orders."
+    });
+
+    // Optionally add more Swagger configuration here
+});
 
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
+    app.UseDeveloperExceptionPage(); // Useful for showing detailed errors in development
     app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseSwaggerUI(c =>
+    {
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "RestaurantManagerAPI v1");
+        c.RoutePrefix = string.Empty; // This will make Swagger UI available at the app's root
+    });
 }
 
 app.UseHttpsRedirection();
+
 app.UseAuthorization();
+
 app.MapControllers();
+
 app.Run();
+

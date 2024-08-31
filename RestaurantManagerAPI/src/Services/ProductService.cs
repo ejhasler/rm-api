@@ -1,105 +1,101 @@
-using Microsoft.EntityFrameworkCore;
-using RestaurantManagerAPI.Data;
 using RestaurantManagerAPI.Models;
-using System;
+using RestaurantManagerAPI.Data.Repositories;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Linq;
+using System;
+using RestaurantManagerAPI.Services;
 
-namespace RestaurantManagerAPI.Services;
-
-/// <summary>
-/// Represents a service for managing products in the restaurant stock.
-/// </summary>
-/// <author>Even Johan Pereira Haslerud</author>
-/// <date>29.08.2021</date>
-public class ProductService : IProductService
+namespace RestaurantManagerAPI.Application.Services
 {
-    private readonly RestaurantContext _context;
-
     /// <summary>
-    /// Initializes a new instance of the <see cref="ProductService"/> class.
+    /// Service for managing products in the restaurant application.
     /// </summary>
-    public ProductService(RestaurantContext context)
+    public class ProductService : IProductService
     {
-        _context = context;
-    }
+        private readonly IProductRepository _productRepository;
 
-    /// <summary>
-    /// Gets all products from the database.
-    /// </summary>
-    /// <returns>All the products from the database.</returns>
-    public async Task<IEnumerable<Product>> GetAllProductsAsync()
-    {
-        return await _context.Products.ToListAsync();
-    }
-
-    /// <summary>
-    /// Gets a product by its unique identifier.
-    /// </summary>
-    /// <param name="id">The unique identifier of the product.</param>
-    /// <returns>The product with the given id.</returns>
-    public async Task<Product> GetProductByIdAsync(int id)
-    {
-        return await _context.Products.FindAsync(id);
-    }
-
-    /// <summary>
-    /// Adds a new product to the database.
-    /// </summary>
-    public async Task<Product> AddProductAsync(Product product)
-    {
-        ValidateProduct(product); // Validate before any database operation
-
-        _context.Products.Add(product);
-        await _context.SaveChangesAsync();
-        return product;
-    }
-
-    /// <summary>
-    /// Updates an existing product in the database.
-    /// </summary>
-    public async Task UpdateProductAsync(Product product)
-    {
-        ValidateProduct(product); // Validate before any database operation
-
-        _context.Entry(product).State = EntityState.Modified;
-        await _context.SaveChangesAsync();
-    }
-
-    /// <summary>
-    /// Deletes a product from the database.
-    /// </summary>
-    public async Task DeleteProductAsync(int id)
-    {
-        var product = await _context.Products.FindAsync(id);
-        if (product != null)
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProductService"/> class.
+        /// </summary>
+        /// <param name="productRepository">The repository for accessing product data.</param>
+        public ProductService(IProductRepository productRepository)
         {
-            _context.Products.Remove(product);
-            await _context.SaveChangesAsync();
+            _productRepository = productRepository;
         }
-    }
 
-    /// <summary>
-    /// Validates the product before any database operation.
-    /// </summary>
-    /// <param name="product">The product to validate.</param>
-    /// <exception cref="ArgumentException">Thrown when the product is invalid.</exception>
-    private void ValidateProduct(Product product)
-    {
-        if (product.Id <= 0)
-            throw new ArgumentException("Product ID must be greater than 0.", nameof(product.Id));
+        /// <summary>
+        /// Retrieves all products asynchronously.
+        /// </summary>
+        /// <returns>A list of all products.</returns>
+        public async Task<IEnumerable<Product>> GetAllProductsAsync()
+        {
+            return await _productRepository.GetAllAsync();
+        }
 
-        if (string.IsNullOrWhiteSpace(product.Name) || !Regex.IsMatch(product.Name, @"^[a-zA-Z\s]+$"))
-            throw new ArgumentException("Product name is invalid. It must not contain numbers.", nameof(product.Name));
+        /// <summary>
+        /// Retrieves a product by its unique identifier asynchronously.
+        /// </summary>
+        /// <param name="id">The unique identifier of the product.</param>
+        /// <returns>The product with the specified ID.</returns>
+        public async Task<Product> GetProductByIdAsync(int id)
+        {
+            return await _productRepository.GetByIdAsync(id);
+        }
 
-        if (product.PortionCount <= 0)
-            throw new ArgumentException("Portion count must be greater than 0.", nameof(product.PortionCount));
+        /// <summary>
+        /// Adds a new product asynchronously.
+        /// </summary>
+        /// <param name="product">The product to add.</param>
+        /// <returns>The newly added product.</returns>
+        /// <exception cref="ArgumentException">Thrown when the product is invalid.</exception>
+        public async Task<Product> AddProductAsync(Product product)
+        {
+            ValidateProduct(product);
 
-        if (product.PortionSize <= 0)
-            throw new ArgumentException("Portion size must be greater than 0.", nameof(product.PortionSize));
+            await _productRepository.AddAsync(product);
+            return product;
+        }
 
-        if (string.IsNullOrWhiteSpace(product.Unit))
-            throw new ArgumentException("Unit is required.", nameof(product.Unit));
+        /// <summary>
+        /// Updates an existing product asynchronously.
+        /// </summary>
+        /// <param name="product">The product with updated details.</param>
+        /// <returns>A task representing the asynchronous operation.</returns>
+        /// <exception cref="ArgumentException">Thrown when the product is invalid.</exception>
+        public async Task UpdateProductAsync(Product product)
+        {
+            ValidateProduct(product);
+
+            await _productRepository.UpdateAsync(product);
+        }
+
+        /// <summary>
+        /// Deletes a product by its unique identifier asynchronously.
+        /// </summary>
+        /// <param name="id">The unique identifier of the product to delete.</param>
+        /// <returns>A task representing the asynchronous operation.</returns>
+        public async Task DeleteProductAsync(int id)
+        {
+            await _productRepository.DeleteAsync(id);
+        }
+
+        /// <summary>
+        /// Validates the product using the built-in validation attributes.
+        /// </summary>
+        /// <param name="product">The product to validate.</param>
+        /// <exception cref="ArgumentException">Thrown when the product is invalid.</exception>
+        private void ValidateProduct(Product product)
+        {
+            var validationResults = new List<ValidationResult>();
+            var context = new ValidationContext(product, null, null);
+            if (!Validator.TryValidateObject(product, context, validationResults, true))
+            {
+                var validationMessage = string.Join(", ", validationResults.Select(r => r.ErrorMessage));
+                throw new ArgumentException(validationMessage);
+            }
+        }
     }
 }
