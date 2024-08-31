@@ -1,0 +1,25 @@
+<div class="container">
+  <h2>Product List</h2>
+  <button mat-raised-button color="primary">Add Product</button>
+
+  <table class="table table-bordered mt-3">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Portion Count</th>
+        <th>Unit</th>
+        <th>Portion Size</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products">
+        <td>{{ product.id }}</td>
+        <td>{{ product.name }}</td>
+        <td>{{ product.portionCount }}</td>
+        <td>{{ product.unit }}</td>
+        <td>{{ product.portionSize }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

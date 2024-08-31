@@ -1,14 +1,18 @@
 <div class="container-fluid g-0">
+  <!-- Header Component -->
   <app-header (sideNavToggled)="sideNavStatus = $event;"></app-header>
 
   <main>
-    <app-side-nav [sideNavStatus]="sideNavStatus" [ngClass]="
-    {'app-side-nav-open': sideNavStatus}"></app-side-nav>
+    <!-- Side Navigation Component -->
+    <app-side-nav 
+      [sideNavStatus]="sideNavStatus" 
+      [ngClass]="{'app-side-nav-open': sideNavStatus}">
+    </app-side-nav>
 
-    <div class="display-area p-3" [ngClass]="
-    {'display-area-shrink': sideNavStatus}">
-      <p>Main Display Area</p>
+    <!-- Main Display Area -->
+    <div class="display-area p-3" [ngClass]="{'display-area-shrink': sideNavStatus}">
+      <!-- Routed components will be displayed here -->
+      <router-outlet></router-outlet>
     </div>
-
   </main>
 </div>

@@ -25,6 +25,17 @@ builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddScoped<IMenuItemRepository, MenuItemRepository>(); // Assuming you have these repositories
 builder.Services.AddScoped<IOrderRepository, OrderRepository>(); // Assuming you have these repositories
 
+// Add CORS configuration
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(builder =>
+    {
+        builder.WithOrigins("http://localhost:4200") // Allow requests from the Angular app
+               .AllowAnyHeader()
+               .AllowAnyMethod();
+    });
+});
+
 // Add Swagger for API documentation
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
@@ -55,9 +66,11 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+// Enable CORS middleware
+app.UseCors();
+
 app.UseAuthorization();
 
 app.MapControllers();
 
 app.Run();
-
