@@ -63,9 +63,50 @@ Some internal resources you may find useful:
 
 ## Getting started
 
+First, clone the repository to your computer. This can be done by running the following command:
+
+```sh
+git clone https://github.com/ejhasler/rm-api.git
+```
+
+
+<br/>
+
+### Backend
+For backend launching i.e., normal launch of the backend. One may use the command:
+```sh
+dotnet run
+```
+
+
+<br/>
+
+### Test
+For test launching, one may use the following command in the folder /rm-api/RestaurantManagerAPI:
+
+```sh
+dotnet test
+```
+
+### Frontend
+For production launching i.e., normal launch of the frontend. One may use the command:
+
+```sh
+ng serve
+```
+
+<br/>
+
+
 ### Development
 
-### Running tests
+In order to get started with development, you will need the following:
+
+- .NET 8.0
+- Angular 18.0 (LTS)
+- BootStrap 5.0 (LTS)
+- Node.Js 18 (LTS)
+- SQLite Server or any preferred Database
 
 ## License
 
