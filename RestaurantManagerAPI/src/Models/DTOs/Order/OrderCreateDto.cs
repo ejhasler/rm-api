@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using RestaurantManagerAPI.Validation;
 
 namespace RestaurantManagerAPI.DTOs;
 
@@ -7,7 +8,7 @@ namespace RestaurantManagerAPI.DTOs;
 /// <see cref="Order"/>.
 /// </summary>
 /// <author>Even Johan Pereira Haslerud</author>
-/// <date>30.08.2021</date>
+/// <date>30.08.2024</date>
 public class OrderCreateDto
 {
 
@@ -20,6 +21,7 @@ public class OrderCreateDto
     /// </value>
     /// <example>2021-08-30T12:00:00</example>
     [Required(ErrorMessage = "DateTime is required.")]
+    [ValidDateTime(ErrorMessage = "DateTime must be a valid date and cannot be DateTime.MinValue.")]
     public DateTime DateTime { get; set; }
 
     /// <summary>

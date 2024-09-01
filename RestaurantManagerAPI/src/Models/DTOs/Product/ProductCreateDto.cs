@@ -7,7 +7,7 @@ namespace RestaurantManagerAPI.DTOs;
 /// <see cref="Product"/>.
 /// </summary>
 /// <author>Even Johan Pereira Haslerud</author>
-/// <date>30.08.2021</date>
+/// <date>30.08.2024</date>
 public class ProductCreateDto
 {
 

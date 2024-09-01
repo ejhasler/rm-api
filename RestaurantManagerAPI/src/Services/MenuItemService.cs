@@ -1,16 +1,14 @@
 using RestaurantManagerAPI.Models;
 using RestaurantManagerAPI.Repositories;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Threading.Tasks;
-using System.Linq;
-using System;
 
 namespace RestaurantManagerAPI.Services
 {
     /// <summary>
     /// Service for managing menu items in the restaurant application.
     /// </summary>
+    /// <author>Even Johan Pereira Haslerud</author>
+    /// <date>30.08.2024</date>
     public class MenuItemService : IMenuItemService
     {
         private readonly IMenuItemRepository _menuItemRepository;

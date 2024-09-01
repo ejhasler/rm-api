@@ -5,7 +5,6 @@ import { OrderService, Order } from '../services/order.service';
 import { MenuService, Menu } from '../services/menu.service';
 import { ProductService, Product } from '../services/product.service';
 
-// Declare bootstrap as a global variable
 declare var bootstrap: any;
 
 @Component({

@@ -73,6 +73,89 @@
         }
       }
     },
+    "H:\\rm-api\\RestaurantManagerAPI\\src\\Validations\\ValidDateTime.cs": {
+      "RestaurantManagerAPI.Validation.ValidDateTimeAttribute": {
+        "System.ComponentModel.DataAnnotations.ValidationResult RestaurantManagerAPI.Validation.ValidDateTimeAttribute::IsValid(System.Object,System.ComponentModel.DataAnnotations.ValidationContext)": {
+          "Lines": {
+            "20": 6,
+            "21": 6,
+            "22": 6,
+            "23": 6,
+            "24": 3,
+            "25": 3,
+            "27": 3,
+            "29": 3,
+            "30": 6
+          },
+          "Branches": [
+            {
+              "Line": 21,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 6
+            },
+            {
+              "Line": 21,
+              "Offset": 7,
+              "EndOffset": 19,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 21,
+              "Offset": 22,
+              "EndOffset": 24,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 6
+            },
+            {
+              "Line": 23,
+              "Offset": 38,
+              "EndOffset": 40,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 3
+            },
+            {
+              "Line": 25,
+              "Offset": 48,
+              "EndOffset": 50,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 0
+            },
+            {
+              "Line": 25,
+              "Offset": 48,
+              "EndOffset": 56,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 3
+            },
+            {
+              "Line": 23,
+              "Offset": 38,
+              "EndOffset": 64,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 3
+            },
+            {
+              "Line": 21,
+              "Offset": 22,
+              "EndOffset": 65,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 3
+            }
+          ]
+        }
+      }
+    },
     "H:\\rm-api\\RestaurantManagerAPI\\src\\Services\\ProductService.cs": {
       "RestaurantManagerAPI.Application.Services.ProductService": {
         "System.Void RestaurantManagerAPI.Application.Services.ProductService::ValidateProduct(RestaurantManagerAPI.Models.Product)": {
@@ -81,10 +164,10 @@
             "92": 6,
             "93": 6,
             "94": 6,
-            "95": 4,
-            "96": 8,
-            "97": 4,
-            "99": 2
+            "95": 3,
+            "96": 10,
+            "97": 3,
+            "99": 3
           },
           "Branches": [
             {
@@ -93,7 +176,7 @@
               "EndOffset": 32,
               "Path": 0,
               "Ordinal": 0,
-              "Hits": 4
+              "Hits": 3
             },
             {
               "Line": 94,
@@ -101,16 +184,16 @@
               "EndOffset": 88,
               "Path": 1,
               "Ordinal": 1,
-              "Hits": 2
+              "Hits": 3
             }
           ]
         },
         "System.Void RestaurantManagerAPI.Application.Services.ProductService::.ctor(RestaurantManagerAPI.Data.Repositories.IProductRepository)": {
           "Lines": {
-            "24": 10,
-            "25": 10,
-            "26": 10,
-            "27": 10
+            "24": 12,
+            "25": 12,
+            "26": 12,
+            "27": 12
           },
           "Branches": []
         }
@@ -118,8 +201,8 @@
       "RestaurantManagerAPI.Application.Services.ProductService/<AddProductAsync>d__4": {
         "System.Void RestaurantManagerAPI.Application.Services.ProductService/<AddProductAsync>d__4::MoveNext()": {
           "Lines": {
-            "55": 5,
-            "56": 5,
+            "55": 2,
+            "56": 2,
             "58": 1,
             "59": 1,
             "60": 1
@@ -130,8 +213,8 @@
       "RestaurantManagerAPI.Application.Services.ProductService/<DeleteProductAsync>d__6": {
         "System.Void RestaurantManagerAPI.Application.Services.ProductService/<DeleteProductAsync>d__6::MoveNext()": {
           "Lines": {
-            "81": 1,
-            "82": 1,
+            "81": 2,
+            "82": 2,
             "83": 1
           },
           "Branches": []
@@ -140,9 +223,9 @@
       "RestaurantManagerAPI.Application.Services.ProductService/<GetAllProductsAsync>d__2": {
         "System.Void RestaurantManagerAPI.Application.Services.ProductService/<GetAllProductsAsync>d__2::MoveNext()": {
           "Lines": {
-            "34": 1,
-            "35": 1,
-            "36": 1
+            "34": 2,
+            "35": 2,
+            "36": 2
           },
           "Branches": []
         }
@@ -160,8 +243,8 @@
       "RestaurantManagerAPI.Application.Services.ProductService/<UpdateProductAsync>d__5": {
         "System.Void RestaurantManagerAPI.Application.Services.ProductService/<UpdateProductAsync>d__5::MoveNext()": {
           "Lines": {
-            "69": 1,
-            "70": 1,
+            "69": 2,
+            "70": 2,
             "72": 1,
             "73": 1
           },
@@ -169,75 +252,18 @@
         }
       }
     },
-    "H:\\rm-api\\RestaurantManagerAPI\\src\\Services\\MenuItemProductService.cs": {
-      "RestaurantManagerAPI.Services.MenuItemProductService": {
-        "System.Void RestaurantManagerAPI.Services.MenuItemProductService::.ctor(RestaurantManagerAPI.Data.RestaurantContext)": {
-          "Lines": {
-            "21": 0,
-            "22": 0,
-            "23": 0,
-            "24": 0
-          },
-          "Branches": []
-        }
-      },
-      "RestaurantManagerAPI.Services.MenuItemProductService/<AddMenuItemProductAsync>d__2": {
-        "System.Void RestaurantManagerAPI.Services.MenuItemProductService/<AddMenuItemProductAsync>d__2::MoveNext()": {
-          "Lines": {
-            "31": 0,
-            "32": 0,
-            "33": 0,
-            "34": 0
-          },
-          "Branches": []
-        }
-      },
-      "RestaurantManagerAPI.Services.MenuItemProductService/<RemoveMenuItemProductAsync>d__3": {
-        "System.Void RestaurantManagerAPI.Services.MenuItemProductService/<RemoveMenuItemProductAsync>d__3::MoveNext()": {
-          "Lines": {
-            "41": 0,
-            "42": 0,
-            "43": 0,
-            "45": 0,
-            "46": 0,
-            "47": 0,
-            "48": 0,
-            "49": 0,
-            "50": 0
-          },
-          "Branches": [
-            {
-              "Line": 45,
-              "Offset": 420,
-              "EndOffset": 425,
-              "Path": 0,
-              "Ordinal": 0,
-              "Hits": 0
-            },
-            {
-              "Line": 45,
-              "Offset": 420,
-              "EndOffset": 571,
-              "Path": 1,
-              "Ordinal": 1,
-              "Hits": 0
-            }
-          ]
-        }
-      }
-    },
     "H:\\rm-api\\RestaurantManagerAPI\\src\\Services\\MenuItemService.cs": {
       "RestaurantManagerAPI.Services.MenuItemService": {
         "System.Void RestaurantManagerAPI.Services.MenuItemService::ValidateMenuItem(RestaurantManagerAPI.Models.MenuItem)": {
           "Lines": {
-            "126": 4,
-            "127": 4,
-            "128": 4,
-            "129": 4,
-            "130": 1,
-            "131": 2,
-            "132": 1,
-            "134": 3
+            "126": 9,
+            "127": 9,
+            "128": 9,
+            "129": 9,
+            "130": 3,
+            "131": 6,
+            "132": 3,
+            "134": 6
           },
           "Branches": [
             {
@@ -246,7 +272,7 @@
               "EndOffset": 32,
               "Path": 0,
               "Ordinal": 0,
-              "Hits": 1
+              "Hits": 3
             },
             {
               "Line": 129,
@@ -254,17 +280,17 @@
               "EndOffset": 88,
               "Path": 1,
               "Ordinal": 1,
-              "Hits": 3
+              "Hits": 6
             }
           ]
         },
         "System.Void RestaurantManagerAPI.Services.MenuItemService::.ctor(RestaurantManagerAPI.Repositories.IMenuItemRepository,RestaurantManagerAPI.Services.IProductService)": {
           "Lines": {
-            "24": 8,
-            "25": 8,
-            "26": 8,
-            "27": 8,
-            "28": 8
+            "24": 15,
+            "25": 15,
+            "26": 15,
+            "27": 15,
+            "28": 15
           },
           "Branches": []
         }
@@ -274,14 +300,14 @@
           "Lines": {
             "57": 3,
             "58": 3,
-            "61": 11,
-            "62": 3,
-            "63": 3,
-            "64": 3,
+            "61": 9,
+            "62": 2,
+            "63": 2,
+            "64": 2,
             "65": 1,
             "66": 1,
-            "69": 2,
-            "70": 2,
+            "69": 1,
+            "70": 1,
             "72": 1,
             "73": 1
           },
@@ -292,7 +318,7 @@
               "EndOffset": 80,
               "Path": 1,
               "Ordinal": 3,
-              "Hits": 3
+              "Hits": 2
             },
             {
               "Line": 64,
@@ -308,7 +334,7 @@
               "EndOffset": 313,
               "Path": 1,
               "Ordinal": 1,
-              "Hits": 2
+              "Hits": 1
             },
             {
               "Line": 61,
@@ -324,8 +350,8 @@
       "RestaurantManagerAPI.Services.MenuItemService/<DeleteMenuItemAsync>d__7": {
         "System.Void RestaurantManagerAPI.Services.MenuItemService/<DeleteMenuItemAsync>d__7::MoveNext()": {
           "Lines": {
-            "116": 1,
-            "117": 1,
+            "116": 2,
+            "117": 2,
             "118": 1
           },
           "Branches": []
@@ -334,9 +360,9 @@
       "RestaurantManagerAPI.Services.MenuItemService/<GetAllMenuItemsAsync>d__3": {
         "System.Void RestaurantManagerAPI.Services.MenuItemService/<GetAllMenuItemsAsync>d__3::MoveNext()": {
           "Lines": {
-            "35": 1,
-            "36": 1,
-            "37": 1
+            "35": 2,
+            "36": 2,
+            "37": 2
           },
           "Branches": []
         }
@@ -354,22 +380,22 @@
       "RestaurantManagerAPI.Services.MenuItemService/<UpdateMenuItemAsync>d__6": {
         "System.Void RestaurantManagerAPI.Services.MenuItemService/<UpdateMenuItemAsync>d__6::MoveNext()": {
           "Lines": {
-            "83": 1,
-            "84": 1,
-            "86": 1,
-            "87": 1,
-            "88": 0,
-            "89": 0,
-            "92": 1,
-            "93": 1,
-            "96": 7,
+            "83": 4,
+            "84": 4,
+            "86": 3,
+            "87": 3,
+            "88": 1,
+            "89": 1,
+            "92": 2,
+            "93": 2,
+            "96": 9,
             "97": 2,
             "98": 2,
             "99": 2,
-            "100": 0,
-            "101": 0,
-            "104": 2,
-            "105": 2,
+            "100": 1,
+            "101": 1,
+            "104": 1,
+            "105": 1,
             "107": 1,
             "108": 1
           },
@@ -380,7 +406,7 @@
               "EndOffset": 212,
               "Path": 0,
               "Ordinal": 0,
-              "Hits": 0
+              "Hits": 1
             },
             {
               "Line": 87,
@@ -388,7 +414,7 @@
               "EndOffset": 281,
               "Path": 1,
               "Ordinal": 1,
-              "Hits": 1
+              "Hits": 2
             },
             {
               "Line": 96,
@@ -404,7 +430,7 @@
               "EndOffset": 530,
               "Path": 0,
               "Ordinal": 2,
-              "Hits": 0
+              "Hits": 1
             },
             {
               "Line": 99,
@@ -412,7 +438,7 @@
               "EndOffset": 594,
               "Path": 1,
               "Ordinal": 3,
-              "Hits": 2
+              "Hits": 1
             },
             {
               "Line": 96,
@@ -430,40 +456,59 @@
       "RestaurantManagerAPI.Services.OrderService": {
         "System.Void RestaurantManagerAPI.Services.OrderService::ValidateOrder(RestaurantManagerAPI.Models.Order)": {
           "Lines": {
-            "147": 0,
+            "137": 6,
+            "138": 6,
+            "139": 6,
+            "140": 6,
+            "141": 2,
+            "142": 4,
+            "143": 2,
+            "147": 4,
             "148": 0,
             "149": 0,
-            "150": 0,
-            "151": 0,
-            "152": 0,
-            "153": 0,
-            "155": 0
+            "151": 4
           },
           "Branches": [
             {
-              "Line": 150,
+              "Line": 140,
               "Offset": 30,
               "EndOffset": 32,
               "Path": 0,
               "Ordinal": 0,
-              "Hits": 0
+              "Hits": 2
             },
             {
-              "Line": 150,
+              "Line": 140,
               "Offset": 30,
               "EndOffset": 88,
               "Path": 1,
               "Ordinal": 1,
+              "Hits": 4
+            },
+            {
+              "Line": 147,
+              "Offset": 113,
+              "EndOffset": 115,
+              "Path": 0,
+              "Ordinal": 2,
               "Hits": 0
+            },
+            {
+              "Line": 147,
+              "Offset": 113,
+              "EndOffset": 127,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 4
             }
           ]
         },
         "System.Void RestaurantManagerAPI.Services.OrderService::.ctor(RestaurantManagerAPI.Data.RestaurantContext)": {
           "Lines": {
-            "23": 0,
-            "24": 0,
-            "25": 0,
-            "26": 0
+            "23": 12,
+            "24": 12,
+            "25": 12,
+            "26": 12
           },
           "Branches": []
         }
@@ -471,133 +516,52 @@
       "RestaurantManagerAPI.Services.OrderService/<AddOrderAsync>d__4": {
         "System.Void RestaurantManagerAPI.Services.OrderService/<AddOrderAsync>d__4::MoveNext()": {
           "Lines": {
-            "60": 0,
-            "61": 0,
-            "64": 0,
+            "60": 4,
+            "61": 4,
+            "64": 3,
+            "66": 3,
             "67": 0,
             "68": 0,
-            "69": 0,
-            "70": 0,
             "71": 0,
             "72": 0,
             "73": 0,
-            "75": 0,
+            "74": 0,
             "76": 0,
             "77": 0,
+            "78": 0,
+            "79": 0,
+            "80": 0,
             "81": 0,
-            "82": 0,
             "83": 0,
-            "84": 0,
-            "85": 0,
-            "86": 0,
-            "90": 0,
-            "91": 0,
-            "92": 0,
-            "94": 0,
-            "95": 0,
-            "97": 0,
-            "99": 0,
-            "101": 0,
-            "102": 0,
-            "103": 0,
-            "104": 0,
-            "106": 0
+            "86": 3,
+            "87": 1,
+            "88": 1,
+            "91": 1,
+            "92": 1
           },
           "Branches": [
             {
-              "Line": 60,
-              "Offset": 16,
-              "EndOffset": 27,
+              "Line": 66,
+              "Offset": 130,
+              "EndOffset": 135,
               "Path": 0,
               "Ordinal": 0,
               "Hits": 0
             },
             {
-              "Line": 60,
-              "Offset": 16,
-              "EndOffset": 191,
-              "Path": 1,
-              "Ordinal": 1,
-              "Hits": 0
-            },
-            {
-              "Line": 64,
-              "Offset": 196,
-              "EndOffset": 200,
+              "Line": 68,
+              "Offset": 287,
+              "EndOffset": 291,
               "Path": 0,
               "Ordinal": 2,
               "Hits": 0
             },
             {
-              "Line": 64,
-              "Offset": 196,
-              "EndOffset": 220,
-              "Path": 1,
-              "Ordinal": 3,
-              "Hits": 0
-            },
-            {
               "Line": 68,
-              "Offset": 1199,
+              "Offset": 287,
               "EndOffset": 311,
               "Path": 1,
-              "Ordinal": 11,
-              "Hits": 0
-            },
-            {
-              "Line": 75,
-              "Offset": 757,
-              "EndOffset": 759,
-              "Path": 0,
-              "Ordinal": 4,
-              "Hits": 0
-            },
-            {
-              "Line": 75,
-              "Offset": 757,
-              "EndOffset": 833,
-              "Path": 1,
-              "Ordinal": 5,
-              "Hits": 0
-            },
-            {
-              "Line": 81,
-              "Offset": 1131,
-              "EndOffset": 873,
-              "Path": 1,
-              "Ordinal": 9,
-              "Hits": 0
-            },
-            {
-              "Line": 83,
-              "Offset": 922,
-              "EndOffset": 927,
-              "Path": 0,
-              "Ordinal": 6,
-              "Hits": 0
-            },
-            {
-              "Line": 83,
-              "Offset": 922,
-              "EndOffset": 1079,
-              "Path": 1,
-              "Ordinal": 7,
-              "Hits": 0
-            },
-            {
-              "Line": 81,
-              "Offset": 1131,
-              "EndOffset": 1136,
-              "Path": 0,
-              "Ordinal": 8,
-              "Hits": 0
-            },
-            {
-              "Line": 68,
-              "Offset": 1199,
-              "EndOffset": 1204,
-              "Path": 0,
-              "Ordinal": 10,
+              "Ordinal": 3,
               "Hits": 0
             }
           ]
@@ -606,31 +570,31 @@
       "RestaurantManagerAPI.Services.OrderService/<DeleteOrderAsync>d__6": {
         "System.Void RestaurantManagerAPI.Services.OrderService/<DeleteOrderAsync>d__6::MoveNext()": {
           "Lines": {
-            "132": 0,
-            "133": 0,
-            "134": 0,
-            "135": 0,
-            "136": 0,
-            "137": 0,
-            "138": 0,
-            "139": 0
+            "122": 2,
+            "123": 2,
+            "124": 2,
+            "125": 1,
+            "126": 1,
+            "127": 1,
+            "128": 1,
+            "129": 2
           },
           "Branches": [
             {
-              "Line": 134,
+              "Line": 124,
               "Offset": 197,
               "EndOffset": 202,
               "Path": 0,
               "Ordinal": 0,
-              "Hits": 0
+              "Hits": 1
             },
             {
-              "Line": 134,
+              "Line": 124,
               "Offset": 197,
               "EndOffset": 348,
               "Path": 1,
               "Ordinal": 1,
-              "Hits": 0
+              "Hits": 2
             }
           ]
         }
@@ -638,11 +602,11 @@
       "RestaurantManagerAPI.Services.OrderService/<GetAllOrdersAsync>d__2": {
         "System.Void RestaurantManagerAPI.Services.OrderService/<GetAllOrdersAsync>d__2::MoveNext()": {
           "Lines": {
-            "33": 0,
-            "34": 0,
-            "35": 0,
-            "36": 0,
-            "37": 0
+            "33": 2,
+            "34": 2,
+            "35": 2,
+            "36": 2,
+            "37": 2
           },
           "Branches": []
         }
@@ -650,26 +614,138 @@
       "RestaurantManagerAPI.Services.OrderService/<GetOrderByIdAsync>d__3": {
         "System.Void RestaurantManagerAPI.Services.OrderService/<GetOrderByIdAsync>d__3::MoveNext()": {
           "Lines": {
-            "45": 0,
-            "46": 0,
-            "47": 0,
-            "48": 0,
-            "49": 0
+            "45": 2,
+            "46": 2,
+            "47": 2,
+            "48": 2,
+            "49": 2
           },
           "Branches": []
+        }
+      },
+      "RestaurantManagerAPI.Services.OrderService/<ProcessOrderItems>d__8": {
+        "System.Void RestaurantManagerAPI.Services.OrderService/<ProcessOrderItems>d__8::MoveNext()": {
+          "Lines": {
+            "159": 3,
+            "160": 13,
+            "161": 3,
+            "162": 3,
+            "163": 3,
+            "164": 3,
+            "165": 3,
+            "167": 3,
+            "168": 1,
+            "169": 1,
+            "173": 9,
+            "174": 2,
+            "175": 2,
+            "176": 1,
+            "177": 1,
+            "181": 1,
+            "182": 1,
+            "183": 1,
+            "184": 1
+          },
+          "Branches": [
+            {
+              "Line": 160,
+              "Offset": 801,
+              "EndOffset": 54,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 3
+            },
+            {
+              "Line": 167,
+              "Offset": 488,
+              "EndOffset": 490,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 167,
+              "Offset": 488,
+              "EndOffset": 564,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 2
+            },
+            {
+              "Line": 173,
+              "Offset": 733,
+              "EndOffset": 592,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 2
+            },
+            {
+              "Line": 175,
+              "Offset": 641,
+              "EndOffset": 643,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 1
+            },
+            {
+              "Line": 175,
+              "Offset": 641,
+              "EndOffset": 681,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 1
+            },
+            {
+              "Line": 173,
+              "Offset": 733,
+              "EndOffset": 738,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 1
+            },
+            {
+              "Line": 160,
+              "Offset": 801,
+              "EndOffset": 806,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 1
+            }
+          ]
         }
       },
       "RestaurantManagerAPI.Services.OrderService/<UpdateOrderAsync>d__5": {
         "System.Void RestaurantManagerAPI.Services.OrderService/<UpdateOrderAsync>d__5::MoveNext()": {
           "Lines": {
-            "115": 0,
-            "116": 0,
-            "118": 0,
-            "119": 0,
-            "122": 0,
-            "123": 0
+            "101": 2,
+            "102": 2,
+            "104": 1,
+            "105": 1,
+            "106": 0,
+            "107": 0,
+            "110": 1,
+            "111": 1,
+            "113": 1,
+            "114": 1
           },
-          "Branches": []
+          "Branches": [
+            {
+              "Line": 105,
+              "Offset": 224,
+              "EndOffset": 226,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 105,
+              "Offset": 224,
+              "EndOffset": 295,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
         }
       }
     },
@@ -677,31 +753,31 @@
       "RestaurantManagerAPI.Models.MenuItem": {
         "System.Int32 RestaurantManagerAPI.Models.MenuItem::get_Id()": {
           "Lines": {
-            "23": 11
+            "23": 37
           },
           "Branches": []
         },
         "System.String RestaurantManagerAPI.Models.MenuItem::get_Name()": {
           "Lines": {
-            "37": 14
+            "37": 66
           },
           "Branches": []
         },
         "System.Collections.Generic.List`1<System.Int32> RestaurantManagerAPI.Models.MenuItem::get_ProductIds()": {
           "Lines": {
-            "51": 17
+            "51": 70
           },
           "Branches": []
         },
         "System.Collections.Generic.List`1<RestaurantManagerAPI.Models.MenuItemProduct> RestaurantManagerAPI.Models.MenuItem::get_MenuItemProducts()": {
           "Lines": {
-            "62": 12
+            "62": 58
           },
           "Branches": []
         },
         "System.Collections.Generic.List`1<RestaurantManagerAPI.Models.OrderMenuItem> RestaurantManagerAPI.Models.MenuItem::get_OrderMenuItems()": {
           "Lines": {
-            "73": 7
+            "73": 41
           },
           "Branches": []
         }
@@ -711,25 +787,25 @@
       "RestaurantManagerAPI.Models.MenuItemProduct": {
         "System.Int32 RestaurantManagerAPI.Models.MenuItemProduct::get_MenuItemId()": {
           "Lines": {
-            "24": 0
+            "25": 8
           },
           "Branches": []
         },
         "RestaurantManagerAPI.Models.MenuItem RestaurantManagerAPI.Models.MenuItemProduct::get_MenuItem()": {
           "Lines": {
-            "33": 0
+            "34": 0
           },
           "Branches": []
         },
         "System.Int32 RestaurantManagerAPI.Models.MenuItemProduct::get_ProductId()": {
           "Lines": {
-            "43": 4
+            "45": 20
           },
           "Branches": []
         },
         "RestaurantManagerAPI.Models.Product RestaurantManagerAPI.Models.MenuItemProduct::get_Product()": {
           "Lines": {
-            "51": 0
+            "53": 6
           },
           "Branches": []
         }
@@ -739,21 +815,51 @@
       "RestaurantManagerAPI.Models.Order": {
         "System.Int32 RestaurantManagerAPI.Models.Order::get_Id()": {
           "Lines": {
-            "22": 0
+            "24": 36
           },
           "Branches": []
         },
         "System.DateTime RestaurantManagerAPI.Models.Order::get_DateTime()": {
           "Lines": {
-            "33": 0
+            "35": 66
           },
           "Branches": []
         },
         "System.Collections.Generic.List`1<RestaurantManagerAPI.Models.OrderMenuItem> RestaurantManagerAPI.Models.Order::get_OrderMenuItems()": {
           "Lines": {
-            "47": 0
+            "49": 74
           },
           "Branches": []
+        }
+      },
+      "RestaurantManagerAPI.Models.Order/<Validate>d__12": {
+        "System.Boolean RestaurantManagerAPI.Models.Order/<Validate>d__12::MoveNext()": {
+          "Lines": {
+            "57": 10,
+            "58": 10,
+            "59": 3,
+            "60": 3,
+            "61": 3,
+            "62": 10
+          },
+          "Branches": [
+            {
+              "Line": 58,
+              "Offset": 59,
+              "EndOffset": 61,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 3
+            },
+            {
+              "Line": 58,
+              "Offset": 59,
+              "EndOffset": 109,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 10
+            }
+          ]
         }
       }
     },
@@ -761,25 +867,25 @@
       "RestaurantManagerAPI.Models.OrderMenuItem": {
         "System.Int32 RestaurantManagerAPI.Models.OrderMenuItem::get_OrderId()": {
           "Lines": {
-            "27": 0
+            "28": 10
           },
           "Branches": []
         },
         "RestaurantManagerAPI.Models.Order RestaurantManagerAPI.Models.OrderMenuItem::get_Order()": {
           "Lines": {
-            "39": 0
+            "40": 10
           },
           "Branches": []
         },
         "System.Int32 RestaurantManagerAPI.Models.OrderMenuItem::get_MenuItemId()": {
           "Lines": {
-            "49": 0
+            "51": 36
           },
           "Branches": []
         },
         "RestaurantManagerAPI.Models.MenuItem RestaurantManagerAPI.Models.OrderMenuItem::get_MenuItem()": {
           "Lines": {
-            "61": 0
+            "63": 10
           },
           "Branches": []
         }
@@ -789,37 +895,37 @@
       "RestaurantManagerAPI.Models.Product": {
         "System.Int32 RestaurantManagerAPI.Models.Product::get_Id()": {
           "Lines": {
-            "25": 16
+            "25": 48
           },
           "Branches": []
         },
         "System.String RestaurantManagerAPI.Models.Product::get_Name()": {
           "Lines": {
-            "38": 16
+            "38": 61
           },
           "Branches": []
         },
         "System.Double RestaurantManagerAPI.Models.Product::get_PortionCount()": {
           "Lines": {
-            "49": 15
+            "49": 61
           },
           "Branches": []
         },
         "System.String RestaurantManagerAPI.Models.Product::get_Unit()": {
           "Lines": {
-            "60": 15
+            "60": 57
           },
           "Branches": []
         },
         "System.Double RestaurantManagerAPI.Models.Product::get_PortionSize()": {
           "Lines": {
-            "71": 15
+            "71": 55
           },
           "Branches": []
         },
         "System.Collections.Generic.List`1<RestaurantManagerAPI.Models.MenuItemProduct> RestaurantManagerAPI.Models.Product::get_MenuItemProducts()": {
           "Lines": {
-            "73": 11
+            "73": 36
           },
           "Branches": []
         }
@@ -829,13 +935,13 @@
       "RestaurantManagerAPI.DTOs.MenuItemCreateDto": {
         "System.String RestaurantManagerAPI.DTOs.MenuItemCreateDto::get_Name()": {
           "Lines": {
-            "24": 0
+            "24": 8
           },
           "Branches": []
         },
         "System.Collections.Generic.List`1<System.Int32> RestaurantManagerAPI.DTOs.MenuItemCreateDto::get_ProductIds()": {
           "Lines": {
-            "37": 0
+            "37": 10
           },
           "Branches": []
         }
@@ -845,19 +951,19 @@
       "RestaurantManagerAPI.DTOs.MenuItemReadDto": {
         "System.Int32 RestaurantManagerAPI.DTOs.MenuItemReadDto::get_Id()": {
           "Lines": {
-            "25": 0
+            "25": 15
           },
           "Branches": []
         },
         "System.String RestaurantManagerAPI.DTOs.MenuItemReadDto::get_Name()": {
           "Lines": {
-            "39": 0
+            "39": 12
           },
           "Branches": []
         },
         "System.Collections.Generic.List`1<System.Int32> RestaurantManagerAPI.DTOs.MenuItemReadDto::get_ProductIds()": {
           "Lines": {
-            "53": 0
+            "53": 16
           },
           "Branches": []
         }
@@ -867,28 +973,28 @@
       "RestaurantManagerAPI.DTOs.MenuItemUpdateDto": {
         "System.Int32 RestaurantManagerAPI.DTOs.MenuItemUpdateDto::get_Id()": {
           "Lines": {
-            "25": 0
+            "25": 13
           },
           "Branches": []
         },
         "System.String RestaurantManagerAPI.DTOs.MenuItemUpdateDto::get_Name()": {
           "Lines": {
-            "39": 0
+            "39": 11
           },
           "Branches": []
         },
         "System.Collections.Generic.List`1<System.Int32> RestaurantManagerAPI.DTOs.MenuItemUpdateDto::get_ProductIds()": {
           "Lines": {
-            "53": 0
+            "53": 13
           },
           "Branches": []
         },
         "System.Void RestaurantManagerAPI.DTOs.MenuItemUpdateDto::.ctor()": {
           "Lines": {
-            "58": 0,
-            "59": 0,
-            "60": 0,
-            "61": 0
+            "58": 6,
+            "59": 6,
+            "60": 6,
+            "61": 6
           },
           "Branches": []
         }
@@ -898,13 +1004,13 @@
       "RestaurantManagerAPI.DTOs.OrderCreateDto": {
         "System.DateTime RestaurantManagerAPI.DTOs.OrderCreateDto::get_DateTime()": {
           "Lines": {
-            "23": 0
+            "25": 7
           },
           "Branches": []
         },
         "System.Collections.Generic.List`1<System.Int32> RestaurantManagerAPI.DTOs.OrderCreateDto::get_MenuItemIds()": {
           "Lines": {
-            "37": 0
+            "39": 6
           },
           "Branches": []
         }
@@ -914,19 +1020,19 @@
       "RestaurantManagerAPI.DTOs.OrderReadDto": {
         "System.Int32 RestaurantManagerAPI.DTOs.OrderReadDto::get_Id()": {
           "Lines": {
-            "23": 0
+            "24": 12
           },
           "Branches": []
         },
         "System.DateTime RestaurantManagerAPI.DTOs.OrderReadDto::get_DateTime()": {
           "Lines": {
-            "34": 0
+            "36": 9
           },
           "Branches": []
         },
         "System.Collections.Generic.List`1<System.Int32> RestaurantManagerAPI.DTOs.OrderReadDto::get_MenuItemIds()": {
           "Lines": {
-            "48": 0
+            "50": 9
           },
           "Branches": []
         }
@@ -936,19 +1042,19 @@
       "RestaurantManagerAPI.DTOs.OrderUpdateDto": {
         "System.Int32 RestaurantManagerAPI.DTOs.OrderUpdateDto::get_Id()": {
           "Lines": {
-            "23": 0
+            "24": 10
           },
           "Branches": []
         },
         "System.DateTime RestaurantManagerAPI.DTOs.OrderUpdateDto::get_DateTime()": {
           "Lines": {
-            "34": 0
+            "36": 8
           },
           "Branches": []
         },
         "System.Collections.Generic.List`1<System.Int32> RestaurantManagerAPI.DTOs.OrderUpdateDto::get_MenuItemIds()": {
           "Lines": {
-            "48": 0
+            "50": 8
           },
           "Branches": []
         }
@@ -958,25 +1064,25 @@
       "RestaurantManagerAPI.DTOs.ProductCreateDto": {
         "System.String RestaurantManagerAPI.DTOs.ProductCreateDto::get_Name()": {
           "Lines": {
-            "25": 0
+            "25": 14
           },
           "Branches": []
         },
         "System.Double RestaurantManagerAPI.DTOs.ProductCreateDto::get_PortionCount()": {
           "Lines": {
-            "36": 0
+            "36": 14
           },
           "Branches": []
         },
         "System.String RestaurantManagerAPI.DTOs.ProductCreateDto::get_Unit()": {
           "Lines": {
-            "47": 0
+            "47": 14
           },
           "Branches": []
         },
         "System.Double RestaurantManagerAPI.DTOs.ProductCreateDto::get_PortionSize()": {
           "Lines": {
-            "58": 0
+            "58": 14
           },
           "Branches": []
         }
@@ -986,31 +1092,31 @@
       "RestaurantManagerAPI.DTOs.ProductReadDto": {
         "System.Int32 RestaurantManagerAPI.DTOs.ProductReadDto::get_Id()": {
           "Lines": {
-            "25": 0
+            "25": 14
           },
           "Branches": []
         },
         "System.String RestaurantManagerAPI.DTOs.ProductReadDto::get_Name()": {
           "Lines": {
-            "38": 0
+            "38": 12
           },
           "Branches": []
         },
         "System.Double RestaurantManagerAPI.DTOs.ProductReadDto::get_PortionCount()": {
           "Lines": {
-            "49": 0
+            "49": 11
           },
           "Branches": []
         },
         "System.String RestaurantManagerAPI.DTOs.ProductReadDto::get_Unit()": {
           "Lines": {
-            "60": 0
+            "60": 11
           },
           "Branches": []
         },
         "System.Double RestaurantManagerAPI.DTOs.ProductReadDto::get_PortionSize()": {
           "Lines": {
-            "71": 0
+            "71": 11
           },
           "Branches": []
         }
@@ -1020,714 +1126,57 @@
       "RestaurantManagerAPI.DTOs.ProductUpdateDto": {
         "System.Int32 RestaurantManagerAPI.DTOs.ProductUpdateDto::get_Id()": {
           "Lines": {
-            "24": 0
+            "25": 10
           },
           "Branches": []
         },
         "System.String RestaurantManagerAPI.DTOs.ProductUpdateDto::get_Name()": {
           "Lines": {
-            "37": 0
+            "38": 8
           },
           "Branches": []
         },
         "System.Double RestaurantManagerAPI.DTOs.ProductUpdateDto::get_PortionCount()": {
           "Lines": {
-            "48": 0
+            "49": 8
           },
           "Branches": []
         },
         "System.String RestaurantManagerAPI.DTOs.ProductUpdateDto::get_Unit()": {
           "Lines": {
-            "59": 0
+            "60": 8
           },
           "Branches": []
         },
         "System.Double RestaurantManagerAPI.DTOs.ProductUpdateDto::get_PortionSize()": {
           "Lines": {
-            "70": 0
+            "71": 8
           },
           "Branches": []
         }
       }
     },
-    "H:\\rm-api\\RestaurantManagerAPI\\src\\Migrations\\20240828172900_InitialCreate.cs": {
+    "H:\\rm-api\\RestaurantManagerAPI\\src\\Migrations\\20240901152346_InitialCreate.cs": {
       "RestaurantManagerAPI.Migrations.InitialCreate": {
         "System.Void RestaurantManagerAPI.Migrations.InitialCreate::Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)": {
           "Lines": {
-            "13": 0,
-            "14": 0,
-            "15": 0,
-            "16": 0,
-            "17": 0,
-            "18": 0,
-            "19": 0,
-            "20": 0,
-            "21": 0,
-            "22": 0,
-            "23": 0,
-            "24": 0,
-            "25": 0,
-            "27": 0,
-            "28": 0,
-            "29": 0,
-            "30": 0,
-            "31": 0,
-            "32": 0,
-            "33": 0,
-            "34": 0,
-            "35": 0,
-            "36": 0,
-            "37": 0,
-            "38": 0,
-            "40": 0,
-            "41": 0,
-            "42": 0,
-            "43": 0,
-            "44": 0,
-            "45": 0,
-            "46": 0,
-            "47": 0,
-            "48": 0,
-            "49": 0,
-            "50": 0,
-            "51": 0,
-            "52": 0,
-            "53": 0,
-            "54": 0,
-            "56": 0,
-            "57": 0,
-            "58": 0,
-            "59": 0,
-            "60": 0,
-            "61": 0,
-            "62": 0,
-            "63": 0,
-            "64": 0,
-            "65": 0,
-            "66": 0,
-            "67": 0,
-            "68": 0,
-            "69": 0,
-            "70": 0,
-            "71": 0,
-            "72": 0,
-            "73": 0,
-            "74": 0,
-            "75": 0,
-            "76": 0,
-            "77": 0,
-            "78": 0,
-            "80": 0,
-            "81": 0,
-            "82": 0,
-            "83": 0,
-            "84": 0,
-            "85": 0,
-            "86": 0,
-            "87": 0,
-            "88": 0,
-            "89": 0,
-            "90": 0,
-            "91": 0,
-            "92": 0,
-            "93": 0,
-            "94": 0,
-            "95": 0,
-            "96": 0,
-            "97": 0,
-            "98": 0,
-            "99": 0,
-            "100": 0,
-            "101": 0,
-            "102": 0,
-            "104": 0,
-            "105": 0,
-            "106": 0,
-            "107": 0,
-            "109": 0,
-            "110": 0,
-            "111": 0,
-            "112": 0,
-            "113": 0
+            "12": 0,
+            "14": 0
           },
           "Branches": []
         },
         "System.Void RestaurantManagerAPI.Migrations.InitialCreate::Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)": {
           "Lines": {
-            "117": 0,
-            "118": 0,
-            "119": 0,
-            "121": 0,
-            "122": 0,
-            "124": 0,
-            "125": 0,
-            "127": 0,
-            "128": 0,
-            "130": 0,
-            "131": 0,
-            "132": 0
+            "18": 0,
+            "20": 0
           },
           "Branches": []
         }
       }
     },
-    "H:\\rm-api\\RestaurantManagerAPI\\src\\Migrations\\20240828172900_InitialCreate.Designer.cs": {
+    "H:\\rm-api\\RestaurantManagerAPI\\src\\Migrations\\20240901152346_InitialCreate.Designer.cs": {
       "RestaurantManagerAPI.Migrations.InitialCreate": {
         "System.Void RestaurantManagerAPI.Migrations.InitialCreate::BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)": {
-          "Lines": {
-            "19": 0,
-            "21": 0,
-            "23": 0,
-            "24": 0,
-            "25": 0,
-            "26": 0,
-            "27": 0,
-            "28": 0,
-            "29": 0,
-            "30": 0,
-            "31": 0,
-            "32": 0,
-            "33": 0,
-            "34": 0,
-            "35": 0,
-            "36": 0,
-            "38": 0,
-            "39": 0,
-            "40": 0,
-            "41": 0,
-            "42": 0,
-            "43": 0,
-            "44": 0,
-            "45": 0,
-            "46": 0,
-            "47": 0,
-            "48": 0,
-            "49": 0,
-            "50": 0,
-            "51": 0,
-            "53": 0,
-            "54": 0,
-            "55": 0,
-            "56": 0,
-            "57": 0,
-            "58": 0,
-            "59": 0,
-            "60": 0,
-            "61": 0,
-            "62": 0,
-            "63": 0,
-            "64": 0,
-            "65": 0,
-            "67": 0,
-            "68": 0,
-            "69": 0,
-            "70": 0,
-            "71": 0,
-            "72": 0,
-            "73": 0,
-            "74": 0,
-            "75": 0,
-            "76": 0,
-            "77": 0,
-            "78": 0,
-            "79": 0,
-            "80": 0,
-            "82": 0,
-            "83": 0,
-            "84": 0,
-            "85": 0,
-            "86": 0,
-            "87": 0,
-            "88": 0,
-            "89": 0,
-            "90": 0,
-            "91": 0,
-            "92": 0,
-            "93": 0,
-            "94": 0,
-            "95": 0,
-            "96": 0,
-            "97": 0,
-            "98": 0,
-            "99": 0,
-            "100": 0,
-            "101": 0,
-            "102": 0,
-            "103": 0,
-            "104": 0,
-            "105": 0,
-            "106": 0,
-            "108": 0,
-            "109": 0,
-            "110": 0,
-            "111": 0,
-            "112": 0,
-            "113": 0,
-            "114": 0,
-            "115": 0,
-            "116": 0,
-            "117": 0,
-            "118": 0,
-            "119": 0,
-            "120": 0,
-            "121": 0,
-            "122": 0,
-            "123": 0,
-            "124": 0,
-            "125": 0,
-            "127": 0,
-            "128": 0,
-            "129": 0,
-            "130": 0,
-            "131": 0,
-            "132": 0,
-            "133": 0,
-            "134": 0,
-            "135": 0,
-            "136": 0,
-            "137": 0,
-            "138": 0,
-            "139": 0,
-            "140": 0,
-            "141": 0,
-            "142": 0,
-            "143": 0,
-            "144": 0,
-            "146": 0,
-            "147": 0,
-            "148": 0,
-            "149": 0,
-            "151": 0,
-            "152": 0,
-            "153": 0,
-            "154": 0,
-            "156": 0
-          },
-          "Branches": []
-        }
-      }
-    },
-    "H:\\rm-api\\RestaurantManagerAPI\\src\\Migrations\\20240829155313_UpdateMenuItemsSchema.cs": {
-      "RestaurantManagerAPI.Migrations.UpdateMenuItemsSchema": {
-        "System.Void RestaurantManagerAPI.Migrations.UpdateMenuItemsSchema::Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)": {
-          "Lines": {
-            "13": 0,
-            "14": 0,
-            "15": 0,
-            "17": 0,
-            "18": 0,
-            "20": 0,
-            "21": 0,
-            "22": 0,
-            "23": 0,
-            "24": 0,
-            "25": 0,
-            "26": 0,
-            "28": 0,
-            "29": 0,
-            "30": 0,
-            "31": 0,
-            "32": 0,
-            "33": 0,
-            "35": 0,
-            "36": 0,
-            "37": 0,
-            "38": 0,
-            "39": 0,
-            "40": 0,
-            "42": 0,
-            "43": 0,
-            "44": 0,
-            "45": 0,
-            "47": 0,
-            "48": 0,
-            "49": 0,
-            "50": 0,
-            "51": 0,
-            "52": 0,
-            "53": 0,
-            "54": 0
-          },
-          "Branches": []
-        },
-        "System.Void RestaurantManagerAPI.Migrations.UpdateMenuItemsSchema::Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)": {
-          "Lines": {
-            "58": 0,
-            "59": 0,
-            "60": 0,
-            "61": 0,
-            "63": 0,
-            "64": 0,
-            "65": 0,
-            "67": 0,
-            "68": 0,
-            "69": 0,
-            "71": 0,
-            "72": 0,
-            "73": 0,
-            "75": 0,
-            "76": 0,
-            "77": 0,
-            "78": 0,
-            "79": 0,
-            "80": 0,
-            "81": 0,
-            "83": 0,
-            "84": 0,
-            "85": 0,
-            "86": 0,
-            "87": 0,
-            "88": 0,
-            "89": 0,
-            "90": 0,
-            "91": 0,
-            "92": 0,
-            "93": 0,
-            "94": 0,
-            "96": 0,
-            "97": 0,
-            "98": 0,
-            "99": 0,
-            "100": 0,
-            "101": 0,
-            "102": 0,
-            "103": 0,
-            "104": 0,
-            "105": 0,
-            "106": 0,
-            "107": 0,
-            "108": 0,
-            "109": 0,
-            "110": 0,
-            "111": 0,
-            "112": 0,
-            "113": 0,
-            "114": 0,
-            "115": 0,
-            "116": 0,
-            "117": 0,
-            "118": 0,
-            "120": 0,
-            "121": 0,
-            "122": 0,
-            "123": 0,
-            "124": 0
-          },
-          "Branches": []
-        }
-      }
-    },
-    "H:\\rm-api\\RestaurantManagerAPI\\src\\Migrations\\20240829155313_UpdateMenuItemsSchema.Designer.cs": {
-      "RestaurantManagerAPI.Migrations.UpdateMenuItemsSchema": {
-        "System.Void RestaurantManagerAPI.Migrations.UpdateMenuItemsSchema::BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)": {
-          "Lines": {
-            "18": 0,
-            "20": 0,
-            "22": 0,
-            "23": 0,
-            "24": 0,
-            "25": 0,
-            "26": 0,
-            "27": 0,
-            "28": 0,
-            "29": 0,
-            "30": 0,
-            "31": 0,
-            "32": 0,
-            "33": 0,
-            "34": 0,
-            "35": 0,
-            "36": 0,
-            "37": 0,
-            "38": 0,
-            "39": 0,
-            "40": 0,
-            "41": 0,
-            "42": 0,
-            "43": 0,
-            "44": 0,
-            "46": 0,
-            "47": 0,
-            "48": 0,
-            "49": 0,
-            "50": 0,
-            "51": 0,
-            "52": 0,
-            "53": 0,
-            "54": 0,
-            "55": 0,
-            "56": 0,
-            "57": 0,
-            "58": 0,
-            "59": 0,
-            "61": 0,
-            "62": 0,
-            "63": 0,
-            "64": 0,
-            "65": 0,
-            "66": 0,
-            "67": 0,
-            "68": 0,
-            "69": 0,
-            "70": 0,
-            "71": 0,
-            "72": 0,
-            "73": 0,
-            "74": 0,
-            "75": 0,
-            "76": 0,
-            "77": 0,
-            "78": 0,
-            "79": 0,
-            "80": 0,
-            "81": 0,
-            "82": 0,
-            "83": 0,
-            "84": 0,
-            "86": 0,
-            "87": 0,
-            "88": 0,
-            "89": 0,
-            "90": 0,
-            "91": 0,
-            "92": 0,
-            "93": 0,
-            "94": 0,
-            "95": 0,
-            "97": 0,
-            "98": 0,
-            "99": 0,
-            "100": 0,
-            "101": 0,
-            "102": 0,
-            "103": 0,
-            "104": 0,
-            "105": 0,
-            "106": 0,
-            "107": 0,
-            "108": 0,
-            "109": 0,
-            "110": 0,
-            "111": 0,
-            "112": 0,
-            "113": 0,
-            "114": 0,
-            "116": 0,
-            "117": 0,
-            "118": 0,
-            "119": 0,
-            "121": 0,
-            "122": 0,
-            "123": 0,
-            "124": 0,
-            "126": 0
-          },
-          "Branches": []
-        }
-      }
-    },
-    "H:\\rm-api\\RestaurantManagerAPI\\src\\Migrations\\20240829155548_DeletedFKProduct.cs": {
-      "RestaurantManagerAPI.Migrations.DeletedFKProduct": {
-        "System.Void RestaurantManagerAPI.Migrations.DeletedFKProduct::Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)": {
-          "Lines": {
-            "12": 0,
-            "13": 0,
-            "14": 0,
-            "15": 0,
-            "17": 0,
-            "18": 0,
-            "19": 0,
-            "21": 0,
-            "22": 0,
-            "23": 0,
-            "24": 0
-          },
-          "Branches": []
-        },
-        "System.Void RestaurantManagerAPI.Migrations.DeletedFKProduct::Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)": {
-          "Lines": {
-            "28": 0,
-            "29": 0,
-            "30": 0,
-            "31": 0,
-            "32": 0,
-            "33": 0,
-            "34": 0,
-            "36": 0,
-            "37": 0,
-            "38": 0,
-            "39": 0,
-            "41": 0,
-            "42": 0,
-            "43": 0,
-            "44": 0,
-            "45": 0,
-            "46": 0,
-            "47": 0,
-            "48": 0
-          },
-          "Branches": []
-        }
-      }
-    },
-    "H:\\rm-api\\RestaurantManagerAPI\\src\\Migrations\\20240829155548_DeletedFKProduct.Designer.cs": {
-      "RestaurantManagerAPI.Migrations.DeletedFKProduct": {
-        "System.Void RestaurantManagerAPI.Migrations.DeletedFKProduct::BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)": {
-          "Lines": {
-            "18": 0,
-            "20": 0,
-            "22": 0,
-            "23": 0,
-            "24": 0,
-            "25": 0,
-            "26": 0,
-            "27": 0,
-            "28": 0,
-            "29": 0,
-            "30": 0,
-            "31": 0,
-            "32": 0,
-            "33": 0,
-            "34": 0,
-            "35": 0,
-            "36": 0,
-            "37": 0,
-            "38": 0,
-            "39": 0,
-            "41": 0,
-            "42": 0,
-            "43": 0,
-            "44": 0,
-            "45": 0,
-            "46": 0,
-            "47": 0,
-            "48": 0,
-            "49": 0,
-            "50": 0,
-            "51": 0,
-            "52": 0,
-            "53": 0,
-            "54": 0,
-            "56": 0,
-            "57": 0,
-            "58": 0,
-            "59": 0,
-            "60": 0,
-            "61": 0,
-            "62": 0,
-            "63": 0,
-            "64": 0,
-            "65": 0,
-            "66": 0,
-            "67": 0,
-            "68": 0,
-            "69": 0,
-            "70": 0,
-            "71": 0,
-            "72": 0,
-            "73": 0,
-            "74": 0,
-            "75": 0,
-            "76": 0,
-            "77": 0,
-            "78": 0,
-            "79": 0,
-            "81": 0,
-            "82": 0,
-            "83": 0,
-            "84": 0,
-            "85": 0,
-            "86": 0,
-            "87": 0,
-            "88": 0,
-            "89": 0,
-            "90": 0,
-            "91": 0,
-            "92": 0,
-            "93": 0,
-            "94": 0,
-            "95": 0,
-            "96": 0,
-            "97": 0,
-            "98": 0,
-            "100": 0,
-            "101": 0,
-            "102": 0,
-            "103": 0,
-            "105": 0,
-            "106": 0,
-            "107": 0,
-            "108": 0,
-            "110": 0
-          },
-          "Branches": []
-        }
-      }
-    },
-    "H:\\rm-api\\RestaurantManagerAPI\\src\\Migrations\\20240829183434_UpdateOrderTable.cs": {
-      "RestaurantManagerAPI.Migrations.UpdateOrderTable": {
-        "System.Void RestaurantManagerAPI.Migrations.UpdateOrderTable::Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)": {
-          "Lines": {
-            "13": 0,
-            "14": 0,
-            "15": 0,
-            "16": 0,
-            "17": 0,
-            "18": 0,
-            "19": 0,
-            "20": 0,
-            "21": 0,
-            "22": 0,
-            "23": 0,
-            "24": 0,
-            "25": 0,
-            "27": 0,
-            "28": 0,
-            "29": 0,
-            "30": 0,
-            "31": 0,
-            "32": 0,
-            "33": 0,
-            "34": 0,
-            "35": 0,
-            "36": 0,
-            "37": 0,
-            "38": 0,
-            "39": 0,
-            "40": 0,
-            "41": 0,
-            "42": 0,
-            "43": 0,
-            "44": 0,
-            "45": 0,
-            "46": 0,
-            "47": 0,
-            "48": 0,
-            "49": 0,
-            "51": 0,
-            "52": 0,
-            "53": 0,
-            "54": 0,
-            "55": 0
-          },
-          "Branches": []
-        },
-        "System.Void RestaurantManagerAPI.Migrations.UpdateOrderTable::Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)": {
-          "Lines": {
-            "59": 0,
-            "60": 0,
-            "61": 0,
-            "63": 0,
-            "64": 0,
-            "65": 0
-          },
-          "Branches": []
-        }
-      }
-    },
-    "H:\\rm-api\\RestaurantManagerAPI\\src\\Migrations\\20240829183434_UpdateOrderTable.Designer.cs": {
-      "RestaurantManagerAPI.Migrations.UpdateOrderTable": {
-        "System.Void RestaurantManagerAPI.Migrations.UpdateOrderTable::BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)": {
           "Lines": {
             "19": 0,
             "21": 0,
@@ -2019,64 +1468,64 @@
       "RestaurantManagerAPI.Data.RestaurantContext": {
         "Microsoft.EntityFrameworkCore.DbSet`1<RestaurantManagerAPI.Models.Product> RestaurantManagerAPI.Data.RestaurantContext::get_Products()": {
           "Lines": {
-            "21": 0
+            "21": 57
           },
           "Branches": []
         },
         "Microsoft.EntityFrameworkCore.DbSet`1<RestaurantManagerAPI.Models.MenuItem> RestaurantManagerAPI.Data.RestaurantContext::get_MenuItems()": {
           "Lines": {
-            "26": 0
+            "26": 64
           },
           "Branches": []
         },
         "Microsoft.EntityFrameworkCore.DbSet`1<RestaurantManagerAPI.Models.MenuItemProduct> RestaurantManagerAPI.Data.RestaurantContext::get_MenuItemProducts()": {
           "Lines": {
-            "31": 0
+            "31": 38
           },
           "Branches": []
         },
         "Microsoft.EntityFrameworkCore.DbSet`1<RestaurantManagerAPI.Models.Order> RestaurantManagerAPI.Data.RestaurantContext::get_Orders()": {
           "Lines": {
-            "36": 0
+            "36": 73
           },
           "Branches": []
         },
         "Microsoft.EntityFrameworkCore.DbSet`1<RestaurantManagerAPI.Models.OrderMenuItem> RestaurantManagerAPI.Data.RestaurantContext::get_OrderMenuItems()": {
           "Lines": {
-            "41": 0
+            "41": 38
           },
           "Branches": []
         },
         "System.Void RestaurantManagerAPI.Data.RestaurantContext::OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)": {
           "Lines": {
-            "49": 0,
-            "50": 0,
-            "51": 0,
-            "53": 0,
-            "54": 0,
-            "55": 0,
-            "56": 0,
-            "58": 0,
-            "59": 0,
-            "60": 0,
-            "61": 0,
-            "63": 0,
-            "64": 0,
-            "66": 0,
-            "67": 0,
-            "68": 0,
-            "69": 0,
-            "71": 0,
-            "72": 0,
-            "73": 0,
-            "74": 0,
-            "75": 0
+            "49": 2,
+            "50": 2,
+            "51": 2,
+            "53": 2,
+            "54": 2,
+            "55": 2,
+            "56": 2,
+            "58": 2,
+            "59": 2,
+            "60": 2,
+            "61": 2,
+            "63": 2,
+            "64": 2,
+            "66": 2,
+            "67": 2,
+            "68": 2,
+            "69": 2,
+            "71": 2,
+            "72": 2,
+            "73": 2,
+            "74": 2,
+            "75": 2
           },
           "Branches": []
         },
         "System.Void RestaurantManagerAPI.Data.RestaurantContext::.ctor(Microsoft.EntityFrameworkCore.DbContextOptions`1<RestaurantManagerAPI.Data.RestaurantContext>)": {
           "Lines": {
-            "16": 0
+            "16": 114
           },
           "Branches": []
         }
@@ -2086,10 +1535,10 @@
       "RestaurantManagerAPI.Data.Repositories.ProductRepository": {
         "System.Void RestaurantManagerAPI.Data.Repositories.ProductRepository::.ctor(RestaurantManagerAPI.Data.RestaurantContext)": {
           "Lines": {
-            "19": 0,
-            "20": 0,
-            "21": 0,
-            "22": 0
+            "21": 9,
+            "22": 9,
+            "23": 9,
+            "24": 9
           },
           "Branches": []
         }
@@ -2097,10 +1546,10 @@
       "RestaurantManagerAPI.Data.Repositories.ProductRepository/<AddAsync>d__4": {
         "System.Void RestaurantManagerAPI.Data.Repositories.ProductRepository/<AddAsync>d__4::MoveNext()": {
           "Lines": {
-            "49": 0,
-            "50": 0,
-            "51": 0,
-            "52": 0
+            "51": 1,
+            "52": 1,
+            "53": 1,
+            "54": 1
           },
           "Branches": []
         }
@@ -2108,31 +1557,31 @@
       "RestaurantManagerAPI.Data.Repositories.ProductRepository/<DeleteAsync>d__6": {
         "System.Void RestaurantManagerAPI.Data.Repositories.ProductRepository/<DeleteAsync>d__6::MoveNext()": {
           "Lines": {
-            "71": 0,
-            "72": 0,
-            "73": 0,
-            "74": 0,
-            "75": 0,
-            "76": 0,
-            "77": 0,
-            "78": 0
+            "83": 2,
+            "84": 2,
+            "85": 2,
+            "86": 1,
+            "87": 1,
+            "88": 1,
+            "89": 1,
+            "90": 2
           },
           "Branches": [
             {
-              "Line": 73,
+              "Line": 85,
               "Offset": 197,
               "EndOffset": 202,
               "Path": 0,
               "Ordinal": 0,
-              "Hits": 0
+              "Hits": 1
             },
             {
-              "Line": 73,
+              "Line": 85,
               "Offset": 197,
               "EndOffset": 348,
               "Path": 1,
               "Ordinal": 1,
-              "Hits": 0
+              "Hits": 2
             }
           ]
         }
@@ -2140,9 +1589,9 @@
       "RestaurantManagerAPI.Data.Repositories.ProductRepository/<GetAllAsync>d__2": {
         "System.Void RestaurantManagerAPI.Data.Repositories.ProductRepository/<GetAllAsync>d__2::MoveNext()": {
           "Lines": {
-            "29": 0,
-            "30": 0,
-            "31": 0
+            "31": 2,
+            "32": 2,
+            "33": 2
           },
           "Branches": []
         }
@@ -2150,9 +1599,9 @@
       "RestaurantManagerAPI.Data.Repositories.ProductRepository/<GetByIdAsync>d__3": {
         "System.Void RestaurantManagerAPI.Data.Repositories.ProductRepository/<GetByIdAsync>d__3::MoveNext()": {
           "Lines": {
-            "39": 0,
-            "40": 0,
-            "41": 0
+            "41": 2,
+            "42": 2,
+            "43": 2
           },
           "Branches": []
         }
@@ -2160,12 +1609,35 @@
       "RestaurantManagerAPI.Data.Repositories.ProductRepository/<UpdateAsync>d__5": {
         "System.Void RestaurantManagerAPI.Data.Repositories.ProductRepository/<UpdateAsync>d__5::MoveNext()": {
           "Lines": {
-            "60": 0,
-            "61": 0,
-            "62": 0,
-            "63": 0
+            "62": 2,
+            "64": 2,
+            "65": 2,
+            "66": 1,
+            "67": 1,
+            "68": 1,
+            "69": 1,
+            "71": 1,
+            "72": 1,
+            "75": 1
           },
-          "Branches": []
+          "Branches": [
+            {
+              "Line": 65,
+              "Offset": 202,
+              "EndOffset": 207,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 65,
+              "Offset": 202,
+              "EndOffset": 369,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
         }
       }
     },
@@ -2173,10 +1645,10 @@
       "RestaurantManagerAPI.Repositories.MenuItemRepository": {
         "System.Void RestaurantManagerAPI.Repositories.MenuItemRepository::.ctor(RestaurantManagerAPI.Data.RestaurantContext)": {
           "Lines": {
-            "22": 0,
-            "23": 0,
-            "24": 0,
-            "25": 0
+            "22": 8,
+            "23": 8,
+            "24": 8,
+            "25": 8
           },
           "Branches": []
         }
@@ -2184,11 +1656,11 @@
       "RestaurantManagerAPI.Repositories.MenuItemRepository/<AddMenuItemAsync>d__4": {
         "System.Void RestaurantManagerAPI.Repositories.MenuItemRepository/<AddMenuItemAsync>d__4::MoveNext()": {
           "Lines": {
-            "61": 0,
-            "62": 0,
-            "63": 0,
-            "64": 0,
-            "65": 0
+            "61": 1,
+            "62": 1,
+            "63": 1,
+            "64": 1,
+            "65": 1
           },
           "Branches": []
         }
@@ -2196,14 +1668,14 @@
       "RestaurantManagerAPI.Repositories.MenuItemRepository/<DeleteMenuItemAsync>d__6": {
         "System.Void RestaurantManagerAPI.Repositories.MenuItemRepository/<DeleteMenuItemAsync>d__6::MoveNext()": {
           "Lines": {
-            "84": 0,
-            "85": 0,
-            "86": 0,
-            "87": 0,
-            "88": 0,
-            "89": 0,
-            "90": 0,
-            "91": 0
+            "84": 2,
+            "85": 2,
+            "86": 2,
+            "87": 1,
+            "88": 1,
+            "89": 1,
+            "90": 1,
+            "91": 2
           },
           "Branches": [
             {
@@ -2212,7 +1684,7 @@
               "EndOffset": 202,
               "Path": 0,
               "Ordinal": 0,
-              "Hits": 0
+              "Hits": 1
             },
             {
               "Line": 86,
@@ -2220,7 +1692,7 @@
               "EndOffset": 348,
               "Path": 1,
               "Ordinal": 1,
-              "Hits": 0
+              "Hits": 2
             }
           ]
         }
@@ -2228,12 +1700,12 @@
       "RestaurantManagerAPI.Repositories.MenuItemRepository/<GetAllMenuItemsAsync>d__2": {
         "System.Void RestaurantManagerAPI.Repositories.MenuItemRepository/<GetAllMenuItemsAsync>d__2::MoveNext()": {
           "Lines": {
-            "33": 0,
-            "34": 0,
-            "35": 0,
-            "36": 0,
-            "37": 0,
-            "38": 0
+            "33": 2,
+            "34": 2,
+            "35": 2,
+            "36": 2,
+            "37": 2,
+            "38": 2
           },
           "Branches": []
         }
@@ -2241,12 +1713,12 @@
       "RestaurantManagerAPI.Repositories.MenuItemRepository/<GetMenuItemByIdAsync>d__3": {
         "System.Void RestaurantManagerAPI.Repositories.MenuItemRepository/<GetMenuItemByIdAsync>d__3::MoveNext()": {
           "Lines": {
-            "47": 0,
-            "48": 0,
-            "49": 0,
-            "50": 0,
-            "51": 0,
-            "52": 0
+            "47": 2,
+            "48": 2,
+            "49": 2,
+            "50": 2,
+            "51": 2,
+            "52": 2
           },
           "Branches": []
         }
@@ -2254,10 +1726,10 @@
       "RestaurantManagerAPI.Repositories.MenuItemRepository/<UpdateMenuItemAsync>d__5": {
         "System.Void RestaurantManagerAPI.Repositories.MenuItemRepository/<UpdateMenuItemAsync>d__5::MoveNext()": {
           "Lines": {
-            "73": 0,
-            "74": 0,
-            "75": 0,
-            "76": 0
+            "73": 1,
+            "74": 1,
+            "75": 1,
+            "76": 1
           },
           "Branches": []
         }
@@ -2267,10 +1739,10 @@
       "RestaurantManagerAPI.Repositories.OrderRepository": {
         "System.Void RestaurantManagerAPI.Repositories.OrderRepository::.ctor(RestaurantManagerAPI.Data.RestaurantContext)": {
           "Lines": {
-            "20": 0,
-            "21": 0,
-            "22": 0,
-            "23": 0
+            "20": 9,
+            "21": 9,
+            "22": 9,
+            "23": 9
           },
           "Branches": []
         }
@@ -2278,11 +1750,11 @@
       "RestaurantManagerAPI.Repositories.OrderRepository/<AddOrderAsync>d__4": {
         "System.Void RestaurantManagerAPI.Repositories.OrderRepository/<AddOrderAsync>d__4::MoveNext()": {
           "Lines": {
-            "57": 0,
-            "58": 0,
-            "59": 0,
-            "60": 0,
-            "61": 0
+            "57": 1,
+            "58": 1,
+            "59": 1,
+            "60": 1,
+            "61": 1
           },
           "Branches": []
         }
@@ -2290,31 +1762,31 @@
       "RestaurantManagerAPI.Repositories.OrderRepository/<DeleteOrderAsync>d__6": {
         "System.Void RestaurantManagerAPI.Repositories.OrderRepository/<DeleteOrderAsync>d__6::MoveNext()": {
           "Lines": {
-            "80": 0,
-            "81": 0,
-            "82": 0,
-            "83": 0,
-            "84": 0,
-            "85": 0,
-            "86": 0,
-            "87": 0
+            "92": 2,
+            "93": 2,
+            "94": 2,
+            "95": 1,
+            "96": 1,
+            "97": 1,
+            "98": 1,
+            "99": 2
           },
           "Branches": [
             {
-              "Line": 82,
+              "Line": 94,
               "Offset": 197,
               "EndOffset": 202,
               "Path": 0,
               "Ordinal": 0,
-              "Hits": 0
+              "Hits": 1
             },
             {
-              "Line": 82,
+              "Line": 94,
               "Offset": 197,
               "EndOffset": 348,
               "Path": 1,
               "Ordinal": 1,
-              "Hits": 0
+              "Hits": 2
             }
           ]
         }
@@ -2322,11 +1794,11 @@
       "RestaurantManagerAPI.Repositories.OrderRepository/<GetAllOrdersAsync>d__2": {
         "System.Void RestaurantManagerAPI.Repositories.OrderRepository/<GetAllOrdersAsync>d__2::MoveNext()": {
           "Lines": {
-            "31": 0,
-            "32": 0,
-            "33": 0,
-            "34": 0,
-            "35": 0
+            "31": 2,
+            "32": 2,
+            "33": 2,
+            "34": 2,
+            "35": 2
           },
           "Branches": []
         }
@@ -2334,11 +1806,11 @@
       "RestaurantManagerAPI.Repositories.OrderRepository/<GetOrderByIdAsync>d__3": {
         "System.Void RestaurantManagerAPI.Repositories.OrderRepository/<GetOrderByIdAsync>d__3::MoveNext()": {
           "Lines": {
-            "44": 0,
-            "45": 0,
-            "46": 0,
-            "47": 0,
-            "48": 0
+            "44": 2,
+            "45": 2,
+            "46": 2,
+            "47": 2,
+            "48": 2
           },
           "Branches": []
         }
@@ -2346,12 +1818,35 @@
       "RestaurantManagerAPI.Repositories.OrderRepository/<UpdateOrderAsync>d__5": {
         "System.Void RestaurantManagerAPI.Repositories.OrderRepository/<UpdateOrderAsync>d__5::MoveNext()": {
           "Lines": {
-            "69": 0,
-            "70": 0,
-            "71": 0,
-            "72": 0
+            "69": 2,
+            "71": 2,
+            "72": 2,
+            "73": 1,
+            "75": 1,
+            "76": 1,
+            "77": 1,
+            "79": 1,
+            "81": 1,
+            "83": 1
           },
-          "Branches": []
+          "Branches": [
+            {
+              "Line": 72,
+              "Offset": 202,
+              "EndOffset": 207,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 72,
+              "Offset": 202,
+              "EndOffset": 369,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
         }
       }
     },
@@ -2359,10 +1854,10 @@
       "RestaurantManagerAPI.Controllers.MenuItemsController": {
         "System.Void RestaurantManagerAPI.Controllers.MenuItemsController::.ctor(RestaurantManagerAPI.Services.IMenuItemService)": {
           "Lines": {
-            "17": 0,
-            "18": 0,
-            "19": 0,
-            "20": 0
+            "17": 9,
+            "18": 9,
+            "19": 9,
+            "20": 9
           },
           "Branches": []
         }
@@ -2370,24 +1865,24 @@
       "RestaurantManagerAPI.Controllers.MenuItemsController/<>c": {
         "RestaurantManagerAPI.DTOs.MenuItemReadDto RestaurantManagerAPI.Controllers.MenuItemsController/<>c::<GetAllMenuItems>b__2_0(RestaurantManagerAPI.Models.MenuItem)": {
           "Lines": {
-            "26": 0,
-            "27": 0,
-            "28": 0,
-            "29": 0,
-            "30": 0,
-            "31": 0
+            "26": 4,
+            "27": 4,
+            "28": 4,
+            "29": 4,
+            "30": 2,
+            "31": 4
           },
           "Branches": []
         },
         "System.Int32 RestaurantManagerAPI.Controllers.MenuItemsController/<>c::<GetMenuItem>b__3_0(RestaurantManagerAPI.Models.MenuItemProduct)": {
           "Lines": {
-            "49": 0
+            "49": 1
           },
           "Branches": []
         },
         "System.Int32 RestaurantManagerAPI.Controllers.MenuItemsController/<>c::<AddMenuItem>b__4_0(RestaurantManagerAPI.Models.MenuItemProduct)": {
           "Lines": {
-            "75": 0
+            "75": 2
           },
           "Branches": []
         }
@@ -2395,23 +1890,23 @@
       "RestaurantManagerAPI.Controllers.MenuItemsController/<AddMenuItem>d__4": {
         "System.Void RestaurantManagerAPI.Controllers.MenuItemsController/<AddMenuItem>d__4::MoveNext()": {
           "Lines": {
-            "57": 0,
-            "58": 0,
-            "59": 0,
-            "60": 0,
-            "63": 0,
-            "64": 0,
-            "65": 0,
-            "66": 0,
-            "67": 0,
-            "69": 0,
-            "71": 0,
-            "72": 0,
-            "73": 0,
-            "74": 0,
-            "76": 0,
-            "78": 0,
-            "79": 0
+            "57": 2,
+            "58": 2,
+            "59": 1,
+            "60": 1,
+            "63": 1,
+            "64": 1,
+            "65": 1,
+            "66": 1,
+            "67": 1,
+            "69": 1,
+            "71": 1,
+            "72": 1,
+            "73": 1,
+            "74": 1,
+            "76": 1,
+            "78": 1,
+            "79": 2
           },
           "Branches": [
             {
@@ -2420,7 +1915,7 @@
               "EndOffset": 41,
               "Path": 0,
               "Ordinal": 0,
-              "Hits": 0
+              "Hits": 1
             },
             {
               "Line": 58,
@@ -2428,7 +1923,7 @@
               "EndOffset": 75,
               "Path": 1,
               "Ordinal": 1,
-              "Hits": 0
+              "Hits": 1
             }
           ]
         }
@@ -2436,10 +1931,10 @@
       "RestaurantManagerAPI.Controllers.MenuItemsController/<DeleteMenuItem>d__6": {
         "System.Void RestaurantManagerAPI.Controllers.MenuItemsController/<DeleteMenuItem>d__6::MoveNext()": {
           "Lines": {
-            "104": 0,
-            "105": 0,
-            "106": 0,
-            "107": 0
+            "104": 1,
+            "105": 1,
+            "106": 1,
+            "107": 1
           },
           "Branches": []
         }
@@ -2447,10 +1942,10 @@
       "RestaurantManagerAPI.Controllers.MenuItemsController/<GetAllMenuItems>d__2": {
         "System.Void RestaurantManagerAPI.Controllers.MenuItemsController/<GetAllMenuItems>d__2::MoveNext()": {
           "Lines": {
-            "24": 0,
-            "25": 0,
-            "33": 0,
-            "34": 0
+            "24": 2,
+            "25": 2,
+            "33": 2,
+            "34": 2
           },
           "Branches": []
         }
@@ -2458,18 +1953,18 @@
       "RestaurantManagerAPI.Controllers.MenuItemsController/<GetMenuItem>d__3": {
         "System.Void RestaurantManagerAPI.Controllers.MenuItemsController/<GetMenuItem>d__3::MoveNext()": {
           "Lines": {
-            "38": 0,
-            "39": 0,
-            "40": 0,
-            "41": 0,
-            "42": 0,
-            "45": 0,
-            "46": 0,
-            "47": 0,
-            "48": 0,
-            "50": 0,
-            "52": 0,
-            "53": 0
+            "38": 2,
+            "39": 2,
+            "40": 2,
+            "41": 1,
+            "42": 1,
+            "45": 1,
+            "46": 1,
+            "47": 1,
+            "48": 1,
+            "50": 1,
+            "52": 1,
+            "53": 2
           },
           "Branches": [
             {
@@ -2478,7 +1973,7 @@
               "EndOffset": 166,
               "Path": 0,
               "Ordinal": 0,
-              "Hits": 0
+              "Hits": 1
             },
             {
               "Line": 40,
@@ -2486,7 +1981,7 @@
               "EndOffset": 189,
               "Path": 1,
               "Ordinal": 1,
-              "Hits": 0
+              "Hits": 1
             }
           ]
         }
@@ -2494,19 +1989,19 @@
       "RestaurantManagerAPI.Controllers.MenuItemsController/<UpdateMenuItem>d__5": {
         "System.Void RestaurantManagerAPI.Controllers.MenuItemsController/<UpdateMenuItem>d__5::MoveNext()": {
           "Lines": {
-            "83": 0,
-            "84": 0,
-            "85": 0,
-            "86": 0,
-            "89": 0,
-            "90": 0,
-            "91": 0,
-            "92": 0,
-            "93": 0,
-            "94": 0,
-            "96": 0,
-            "98": 0,
-            "99": 0
+            "83": 2,
+            "84": 2,
+            "85": 1,
+            "86": 1,
+            "89": 1,
+            "90": 1,
+            "91": 1,
+            "92": 1,
+            "93": 1,
+            "94": 1,
+            "96": 1,
+            "98": 1,
+            "99": 2
           },
           "Branches": [
             {
@@ -2515,7 +2010,7 @@
               "EndOffset": 44,
               "Path": 0,
               "Ordinal": 0,
-              "Hits": 0
+              "Hits": 1
             },
             {
               "Line": 84,
@@ -2523,7 +2018,7 @@
               "EndOffset": 67,
               "Path": 1,
               "Ordinal": 1,
-              "Hits": 0
+              "Hits": 1
             }
           ]
         }
@@ -2533,10 +2028,10 @@
       "RestaurantManagerAPI.Controllers.OrdersController": {
         "System.Void RestaurantManagerAPI.Controllers.OrdersController::.ctor(RestaurantManagerAPI.Services.IOrderService)": {
           "Lines": {
-            "17": 0,
-            "18": 0,
-            "19": 0,
-            "20": 0
+            "17": 10,
+            "18": 10,
+            "19": 10,
+            "20": 10
           },
           "Branches": []
         }
@@ -2544,42 +2039,42 @@
       "RestaurantManagerAPI.Controllers.OrdersController/<>c": {
         "RestaurantManagerAPI.DTOs.OrderReadDto RestaurantManagerAPI.Controllers.OrdersController/<>c::<GetAllOrders>b__2_0(RestaurantManagerAPI.Models.Order)": {
           "Lines": {
-            "26": 0,
-            "27": 0,
-            "28": 0,
-            "29": 0,
-            "30": 0,
-            "31": 0
+            "26": 4,
+            "27": 4,
+            "28": 4,
+            "29": 4,
+            "30": 2,
+            "31": 4
           },
           "Branches": []
         },
         "System.Int32 RestaurantManagerAPI.Controllers.OrdersController/<>c::<GetOrder>b__3_0(RestaurantManagerAPI.Models.OrderMenuItem)": {
           "Lines": {
-            "49": 0
+            "49": 1
           },
           "Branches": []
         },
         "RestaurantManagerAPI.Models.OrderMenuItem RestaurantManagerAPI.Controllers.OrdersController/<>c::<AddOrder>b__4_0(System.Int32)": {
           "Lines": {
-            "61": 0
+            "61": 2
           },
           "Branches": []
         },
         "System.Int32 RestaurantManagerAPI.Controllers.OrdersController/<>c::<AddOrder>b__4_1(RestaurantManagerAPI.Models.OrderMenuItem)": {
           "Lines": {
-            "70": 0
+            "70": 2
           },
           "Branches": []
         },
         "RestaurantManagerAPI.Models.OrderMenuItem RestaurantManagerAPI.Controllers.OrdersController/<>c::<UpdateOrder>b__5_0(System.Int32)": {
           "Lines": {
-            "93": 0
+            "93": 3
           },
           "Branches": []
         },
         "System.Int32 RestaurantManagerAPI.Controllers.OrdersController/<>c::<UpdateOrder>b__5_1(RestaurantManagerAPI.Models.OrderMenuItem)": {
           "Lines": {
-            "108": 0
+            "108": 2
           },
           "Branches": []
         }
@@ -2587,19 +2082,19 @@
       "RestaurantManagerAPI.Controllers.OrdersController/<AddOrder>d__4": {
         "System.Void RestaurantManagerAPI.Controllers.OrdersController/<AddOrder>d__4::MoveNext()": {
           "Lines": {
-            "57": 0,
-            "58": 0,
-            "59": 0,
-            "60": 0,
-            "62": 0,
-            "64": 0,
-            "66": 0,
-            "67": 0,
-            "68": 0,
-            "69": 0,
-            "71": 0,
-            "73": 0,
-            "74": 0
+            "57": 1,
+            "58": 1,
+            "59": 1,
+            "60": 1,
+            "62": 1,
+            "64": 1,
+            "66": 1,
+            "67": 1,
+            "68": 1,
+            "69": 1,
+            "71": 1,
+            "73": 1,
+            "74": 1
           },
           "Branches": []
         }
@@ -2607,10 +2102,10 @@
       "RestaurantManagerAPI.Controllers.OrdersController/<DeleteOrder>d__6": {
         "System.Void RestaurantManagerAPI.Controllers.OrdersController/<DeleteOrder>d__6::MoveNext()": {
           "Lines": {
-            "118": 0,
-            "119": 0,
-            "120": 0,
-            "121": 0
+            "118": 2,
+            "119": 2,
+            "120": 1,
+            "121": 1
           },
           "Branches": []
         }
@@ -2618,10 +2113,10 @@
       "RestaurantManagerAPI.Controllers.OrdersController/<GetAllOrders>d__2": {
         "System.Void RestaurantManagerAPI.Controllers.OrdersController/<GetAllOrders>d__2::MoveNext()": {
           "Lines": {
-            "24": 0,
-            "25": 0,
-            "33": 0,
-            "34": 0
+            "24": 2,
+            "25": 2,
+            "33": 2,
+            "34": 2
           },
           "Branches": []
         }
@@ -2629,18 +2124,18 @@
       "RestaurantManagerAPI.Controllers.OrdersController/<GetOrder>d__3": {
         "System.Void RestaurantManagerAPI.Controllers.OrdersController/<GetOrder>d__3::MoveNext()": {
           "Lines": {
-            "38": 0,
-            "39": 0,
-            "40": 0,
-            "41": 0,
-            "42": 0,
-            "45": 0,
-            "46": 0,
-            "47": 0,
-            "48": 0,
-            "50": 0,
-            "52": 0,
-            "53": 0
+            "38": 2,
+            "39": 2,
+            "40": 2,
+            "41": 1,
+            "42": 1,
+            "45": 1,
+            "46": 1,
+            "47": 1,
+            "48": 1,
+            "50": 1,
+            "52": 1,
+            "53": 2
           },
           "Branches": [
             {
@@ -2649,7 +2144,7 @@
               "EndOffset": 166,
               "Path": 0,
               "Ordinal": 0,
-              "Hits": 0
+              "Hits": 1
             },
             {
               "Line": 40,
@@ -2657,7 +2152,7 @@
               "EndOffset": 189,
               "Path": 1,
               "Ordinal": 1,
-              "Hits": 0
+              "Hits": 1
             }
           ]
         }
@@ -2665,26 +2160,26 @@
       "RestaurantManagerAPI.Controllers.OrdersController/<UpdateOrder>d__5": {
         "System.Void RestaurantManagerAPI.Controllers.OrdersController/<UpdateOrder>d__5::MoveNext()": {
           "Lines": {
-            "78": 0,
-            "79": 0,
-            "80": 0,
-            "81": 0,
-            "85": 0,
-            "86": 0,
-            "87": 0,
-            "88": 0,
-            "92": 0,
-            "96": 0,
-            "98": 0,
+            "78": 3,
+            "79": 3,
+            "80": 1,
+            "81": 1,
+            "85": 2,
+            "86": 2,
+            "87": 1,
+            "88": 1,
+            "92": 1,
+            "96": 1,
+            "98": 1,
             "99": 0,
             "100": 0,
-            "104": 0,
-            "105": 0,
-            "106": 0,
-            "107": 0,
-            "109": 0,
-            "111": 0,
-            "112": 0
+            "104": 1,
+            "105": 1,
+            "106": 1,
+            "107": 1,
+            "109": 1,
+            "111": 1,
+            "112": 3
           },
           "Branches": [
             {
@@ -2693,7 +2188,7 @@
               "EndOffset": 55,
               "Path": 0,
               "Ordinal": 0,
-              "Hits": 0
+              "Hits": 1
             },
             {
               "Line": 79,
@@ -2701,7 +2196,7 @@
               "EndOffset": 78,
               "Path": 1,
               "Ordinal": 1,
-              "Hits": 0
+              "Hits": 2
             },
             {
               "Line": 86,
@@ -2709,7 +2204,7 @@
               "EndOffset": 230,
               "Path": 0,
               "Ordinal": 2,
-              "Hits": 0
+              "Hits": 1
             },
             {
               "Line": 86,
@@ -2717,7 +2212,7 @@
               "EndOffset": 253,
               "Path": 1,
               "Ordinal": 3,
-              "Hits": 0
+              "Hits": 1
             },
             {
               "Line": 98,
@@ -2733,7 +2228,7 @@
               "EndOffset": 523,
               "Path": 1,
               "Ordinal": 5,
-              "Hits": 0
+              "Hits": 1
             }
           ]
         }
@@ -2743,10 +2238,10 @@
       "RestaurantManagerAPI.Controllers.ProductsController": {
         "System.Void RestaurantManagerAPI.Controllers.ProductsController::.ctor(RestaurantManagerAPI.Services.IProductService)": {
           "Lines": {
-            "23": 0,
-            "24": 0,
-            "25": 0,
-            "26": 0
+            "23": 13,
+            "24": 13,
+            "25": 13,
+            "26": 13
           },
           "Branches": []
         }
@@ -2754,14 +2249,14 @@
       "RestaurantManagerAPI.Controllers.ProductsController/<>c": {
         "RestaurantManagerAPI.DTOs.ProductReadDto RestaurantManagerAPI.Controllers.ProductsController/<>c::<GetProducts>b__2_0(RestaurantManagerAPI.Models.Product)": {
           "Lines": {
-            "37": 0,
-            "38": 0,
-            "39": 0,
-            "40": 0,
-            "41": 0,
-            "42": 0,
-            "43": 0,
-            "44": 0
+            "37": 4,
+            "38": 4,
+            "39": 4,
+            "40": 4,
+            "41": 4,
+            "42": 4,
+            "43": 4,
+            "44": 4
           },
           "Branches": []
         }
@@ -2769,28 +2264,28 @@
       "RestaurantManagerAPI.Controllers.ProductsController/<AddProduct>d__4": {
         "System.Void RestaurantManagerAPI.Controllers.ProductsController/<AddProduct>d__4::MoveNext()": {
           "Lines": {
-            "87": 0,
-            "88": 0,
-            "89": 0,
-            "90": 0,
-            "93": 0,
-            "94": 0,
-            "95": 0,
-            "96": 0,
-            "97": 0,
-            "98": 0,
-            "99": 0,
-            "101": 0,
-            "103": 0,
-            "104": 0,
-            "105": 0,
-            "106": 0,
-            "107": 0,
-            "108": 0,
-            "109": 0,
-            "110": 0,
-            "112": 0,
-            "113": 0
+            "87": 2,
+            "88": 2,
+            "89": 1,
+            "90": 1,
+            "93": 1,
+            "94": 1,
+            "95": 1,
+            "96": 1,
+            "97": 1,
+            "98": 1,
+            "99": 1,
+            "101": 1,
+            "103": 1,
+            "104": 1,
+            "105": 1,
+            "106": 1,
+            "107": 1,
+            "108": 1,
+            "109": 1,
+            "110": 1,
+            "112": 1,
+            "113": 2
           },
           "Branches": [
             {
@@ -2799,7 +2294,7 @@
               "EndOffset": 41,
               "Path": 0,
               "Ordinal": 0,
-              "Hits": 0
+              "Hits": 1
             },
             {
               "Line": 88,
@@ -2807,7 +2302,7 @@
               "EndOffset": 75,
               "Path": 1,
               "Ordinal": 1,
-              "Hits": 0
+              "Hits": 1
             }
           ]
         }
@@ -2815,17 +2310,17 @@
       "RestaurantManagerAPI.Controllers.ProductsController/<DeleteProduct>d__6": {
         "System.Void RestaurantManagerAPI.Controllers.ProductsController/<DeleteProduct>d__6::MoveNext()": {
           "Lines": {
-            "169": 0,
-            "170": 0,
-            "171": 0,
-            "172": 0,
-            "175": 0,
-            "176": 0,
-            "177": 0,
-            "178": 0,
-            "181": 0,
-            "183": 0,
-            "184": 0
+            "169": 3,
+            "170": 3,
+            "171": 1,
+            "172": 1,
+            "175": 2,
+            "176": 2,
+            "177": 1,
+            "178": 1,
+            "181": 1,
+            "183": 1,
+            "184": 3
           },
           "Branches": [
             {
@@ -2834,7 +2329,7 @@
               "EndOffset": 42,
               "Path": 0,
               "Ordinal": 0,
-              "Hits": 0
+              "Hits": 1
             },
             {
               "Line": 170,
@@ -2842,7 +2337,7 @@
               "EndOffset": 65,
               "Path": 1,
               "Ordinal": 1,
-              "Hits": 0
+              "Hits": 2
             },
             {
               "Line": 176,
@@ -2850,7 +2345,7 @@
               "EndOffset": 217,
               "Path": 0,
               "Ordinal": 2,
-              "Hits": 0
+              "Hits": 1
             },
             {
               "Line": 176,
@@ -2858,7 +2353,7 @@
               "EndOffset": 235,
               "Path": 1,
               "Ordinal": 3,
-              "Hits": 0
+              "Hits": 1
             }
           ]
         }
@@ -2866,24 +2361,24 @@
       "RestaurantManagerAPI.Controllers.ProductsController/<GetProduct>d__3": {
         "System.Void RestaurantManagerAPI.Controllers.ProductsController/<GetProduct>d__3::MoveNext()": {
           "Lines": {
-            "56": 0,
-            "57": 0,
-            "58": 0,
-            "59": 0,
-            "62": 0,
-            "63": 0,
-            "64": 0,
-            "65": 0,
-            "68": 0,
-            "69": 0,
-            "70": 0,
-            "71": 0,
-            "72": 0,
-            "73": 0,
-            "74": 0,
-            "75": 0,
-            "77": 0,
-            "78": 0
+            "56": 3,
+            "57": 3,
+            "58": 1,
+            "59": 1,
+            "62": 2,
+            "63": 2,
+            "64": 1,
+            "65": 1,
+            "68": 1,
+            "69": 1,
+            "70": 1,
+            "71": 1,
+            "72": 1,
+            "73": 1,
+            "74": 1,
+            "75": 1,
+            "77": 1,
+            "78": 3
           },
           "Branches": [
             {
@@ -2892,7 +2387,7 @@
               "EndOffset": 31,
               "Path": 0,
               "Ordinal": 0,
-              "Hits": 0
+              "Hits": 1
             },
             {
               "Line": 57,
@@ -2900,7 +2395,7 @@
               "EndOffset": 59,
               "Path": 1,
               "Ordinal": 1,
-              "Hits": 0
+              "Hits": 2
             },
             {
               "Line": 63,
@@ -2908,7 +2403,7 @@
               "EndOffset": 211,
               "Path": 0,
               "Ordinal": 2,
-              "Hits": 0
+              "Hits": 1
             },
             {
               "Line": 63,
@@ -2916,7 +2411,7 @@
               "EndOffset": 234,
               "Path": 1,
               "Ordinal": 3,
-              "Hits": 0
+              "Hits": 1
             }
           ]
         }
@@ -2924,10 +2419,10 @@
       "RestaurantManagerAPI.Controllers.ProductsController/<GetProducts>d__2": {
         "System.Void RestaurantManagerAPI.Controllers.ProductsController/<GetProducts>d__2::MoveNext()": {
           "Lines": {
-            "34": 0,
-            "35": 0,
-            "46": 0,
-            "47": 0
+            "34": 2,
+            "35": 2,
+            "46": 2,
+            "47": 2
           },
           "Branches": []
         }
@@ -2935,32 +2430,32 @@
       "RestaurantManagerAPI.Controllers.ProductsController/<UpdateProduct>d__5": {
         "System.Void RestaurantManagerAPI.Controllers.ProductsController/<UpdateProduct>d__5::MoveNext()": {
           "Lines": {
-            "123": 0,
-            "124": 0,
-            "125": 0,
-            "126": 0,
-            "129": 0,
+            "123": 3,
+            "124": 3,
+            "125": 1,
+            "126": 1,
+            "129": 2,
             "130": 0,
             "131": 0,
-            "134": 0,
-            "135": 0,
-            "136": 0,
-            "137": 0,
-            "140": 0,
-            "141": 0,
-            "142": 0,
-            "143": 0,
-            "145": 0,
-            "148": 0,
-            "149": 0,
-            "150": 0,
-            "151": 0,
-            "152": 0,
-            "153": 0,
-            "154": 0,
-            "155": 0,
-            "158": 0,
-            "159": 0
+            "134": 2,
+            "135": 2,
+            "136": 1,
+            "137": 1,
+            "140": 1,
+            "141": 1,
+            "142": 1,
+            "143": 1,
+            "145": 1,
+            "148": 1,
+            "149": 1,
+            "150": 1,
+            "151": 1,
+            "152": 1,
+            "153": 1,
+            "154": 1,
+            "155": 1,
+            "158": 1,
+            "159": 3
           },
           "Branches": [
             {
@@ -2969,7 +2464,7 @@
               "EndOffset": 55,
               "Path": 0,
               "Ordinal": 0,
-              "Hits": 0
+              "Hits": 1
             },
             {
               "Line": 124,
@@ -2977,7 +2472,7 @@
               "EndOffset": 83,
               "Path": 1,
               "Ordinal": 1,
-              "Hits": 0
+              "Hits": 2
             },
             {
               "Line": 129,
@@ -2993,7 +2488,7 @@
               "EndOffset": 140,
               "Path": 1,
               "Ordinal": 3,
-              "Hits": 0
+              "Hits": 2
             },
             {
               "Line": 135,
@@ -3001,7 +2496,7 @@
               "EndOffset": 295,
               "Path": 0,
               "Ordinal": 4,
-              "Hits": 0
+              "Hits": 1
             },
             {
               "Line": 135,
@@ -3009,7 +2504,7 @@
               "EndOffset": 318,
               "Path": 1,
               "Ordinal": 5,
-              "Hits": 0
+              "Hits": 1
             }
           ]
         }

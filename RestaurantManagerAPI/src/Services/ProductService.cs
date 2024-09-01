@@ -13,6 +13,8 @@ namespace RestaurantManagerAPI.Application.Services
     /// <summary>
     /// Service for managing products in the restaurant application.
     /// </summary>
+    /// <author>Even Johan Pereira Haslerud</author>
+    /// <date>30.08.2024</date>
     public class ProductService : IProductService
     {
         private readonly IProductRepository _productRepository;

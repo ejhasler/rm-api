@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-
-// Define the Product interface
 export interface Product {
   id?: number;
   name: string;
@@ -15,7 +13,7 @@ export interface Product {
   providedIn: 'root'
 })
 export class ProductService {
-  private apiUrl = 'http://localhost:5230/api/Products'; // Correct URL
+  private apiUrl = 'http://localhost:5230/api/Products';
 
   constructor(private http: HttpClient) {}
 

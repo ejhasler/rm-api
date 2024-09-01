@@ -7,7 +7,7 @@ namespace RestaurantManagerAPI.Data;
 /// Represents the database context for the Restaurant Manager application.
 /// </summary>
 /// <author>Even Johan Pereira Haslerud</author>
-/// <date>29.08.2021</date>
+/// <date>30.08.2024</date>
 public class RestaurantContext : DbContext
 {
     /// <summary>

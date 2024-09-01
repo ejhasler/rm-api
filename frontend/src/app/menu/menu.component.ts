@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { MenuService, Menu } from '../services/menu.service'; // Import MenuService and Menu interface
+import { MenuService, Menu } from '../services/menu.service';
 import { HttpErrorResponse } from '@angular/common/http';
 
-// Declare bootstrap as a global variable
+
 declare var bootstrap: any;
 
 @Component({
@@ -22,10 +22,10 @@ export class MenuComponent implements OnInit {
   newMenu: Menu = {
     name: '',
     productIds: [],
-    productIdsString: ''  // Helper for handling input as a string
+    productIdsString: '' 
   };
-  isEditMode: boolean = false;  // To track if the modal is in edit mode
-  currentMenuId?: number;  // To store the menu ID being edited
+  isEditMode: boolean = false;  
+  currentMenuId?: number; 
 
   constructor(private menuService: MenuService) {}
 
@@ -38,7 +38,7 @@ export class MenuComponent implements OnInit {
       next: (data: Menu[]) => {
         this.menus = data.map(menu => ({
           ...menu,
-          productIdsString: (menu.productIds || []).join(', ')  // Convert productIds array to string for display
+          productIdsString: (menu.productIds || []).join(', ') 
         }));
       },
       error: (error: any) => {
@@ -48,8 +48,8 @@ export class MenuComponent implements OnInit {
   }
 
   openAddMenuDialog(): void {
-    this.isEditMode = false;  // Set to add mode
-    this.resetForm();  // Clear the form
+    this.isEditMode = false; 
+    this.resetForm(); 
 
     // Open the modal for adding a menu
     const modalElement = document.getElementById('menuModal');
@@ -60,9 +60,9 @@ export class MenuComponent implements OnInit {
   }
 
   openEditMenuDialog(menu: Menu): void {
-    this.isEditMode = true;  // Set to edit mode
+    this.isEditMode = true;
     this.currentMenuId = menu.id;
-    this.newMenu = { ...menu };  // Populate the form with the selected menu's data
+    this.newMenu = { ...menu }; 
 
     // Convert productIds array to a comma-separated string
     this.newMenu.productIdsString = menu.productIds.join(', ');
@@ -76,11 +76,10 @@ export class MenuComponent implements OnInit {
   }
 
   submitMenu(): void {
-    // Ensure productIdsString is not undefined before splitting and mapping
     if (this.newMenu.productIdsString) {
       this.newMenu.productIds = this.newMenu.productIdsString.split(',').map(id => parseInt(id.trim(), 10));
     } else {
-      this.newMenu.productIds = []; // If productIdsString is undefined, set productIds to an empty array
+      this.newMenu.productIds = [];
     }
 
     if (this.isEditMode && this.currentMenuId !== undefined) {
@@ -98,7 +97,7 @@ export class MenuComponent implements OnInit {
 
           const index = this.menus.findIndex(m => m.id === updatedMenu.id);
           if (index !== -1) {
-            this.menus[index] = { ...updatedMenu, productIdsString: updatedMenu.productIds.join(', ') };  // Update the menu in the list
+            this.menus[index] = { ...updatedMenu, productIdsString: updatedMenu.productIds.join(', ') };
           } else {
             console.error(`Error: Menu with id ${updatedMenu.id} not found in the menus array.`);
           }
@@ -109,7 +108,7 @@ export class MenuComponent implements OnInit {
           if (error.status === 400) {
             console.error('Bad Request: Please check the submitted data.');
             if (error.error) {
-              console.error('Error details:', error.error); // Log detailed error message
+              console.error('Error details:', error.error); 
             }
           }
         },
@@ -124,7 +123,7 @@ export class MenuComponent implements OnInit {
           }
 
           this.menus.push({ ...newMenu, productIdsString: newMenu.productIds.join(', ') });
-          this.resetForm(); // Reset form after submission
+          this.resetForm();
         },
         error: (error: any) => {
           console.error('Error adding menu:', error);
@@ -137,7 +136,7 @@ export class MenuComponent implements OnInit {
     if (confirm('Are you sure you want to delete this menu?')) {
       this.menuService.deleteMenu(menuId).subscribe({
         next: () => {
-          this.menus = this.menus.filter(menu => menu.id !== menuId); // Remove the deleted menu from the list
+          this.menus = this.menus.filter(menu => menu.id !== menuId); 
           console.log(`Menu with id ${menuId} deleted successfully.`);
         },
         error: (error: HttpErrorResponse) => {

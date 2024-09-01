@@ -8,7 +8,7 @@ namespace RestaurantManagerAPI.Services;
 /// Represents an interface for a menu item product service.
 /// </summary>
 /// <author>Even Johan Pereira Haslerud</author>
-/// <date>29.08.2021</date>
+/// <date>31.08.2024</date>
 public interface IMenuItemProductService
 {
     /// <summary>
