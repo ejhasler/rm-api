@@ -10,6 +10,9 @@
   <a href="#license">License</a>
 </div>
 
+![image](https://github.com/user-attachments/assets/18961225-b31a-49e4-9403-a328fb6bba7a)
+
+
 ## Project Goals
 The main goal of this project is to develop a "Restaurant Manager" RESTful Web API using ASP.NET Core. This API is designed to manage various aspects of restaurant operations, including inventory management, menu management, and customer order processing. The application focuses on providing a scalable and maintainable backend solution that adheres to good software development practices.
 
