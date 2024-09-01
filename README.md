@@ -16,10 +16,7 @@
 - [Architecture](#architecture)
 - [Useful resources](#useful-resources)
 - [Getting started](#getting-started)
-  - [Environment variables](#environment-variables)
   - [Development](#development)
-  - [Running tests](#running-tests)
-  - [Deployment](#deployment)
 - [License](#license)
 
 - ## Project structure
