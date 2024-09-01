@@ -5,7 +5,6 @@ import { ProductService, Product } from '../services/product.service';
 import { MatDialog } from '@angular/material/dialog';
 import { HttpErrorResponse } from '@angular/common/http';
 
-// Declare bootstrap as a global variable
 declare var bootstrap: any;
 
 @Component({
@@ -26,8 +25,8 @@ export class ProductComponent implements OnInit {
     unit: '',
     portionSize: 0
   };
-  isEditMode: boolean = false;  // To track if the modal is in edit mode
-  currentProductId?: number;  // To store the product ID being edited
+  isEditMode: boolean = false; 
+  currentProductId?: number; 
 
   constructor(private productService: ProductService, public dialog: MatDialog) {}
 
@@ -47,8 +46,8 @@ export class ProductComponent implements OnInit {
   }
 
   openAddProductDialog(): void {
-    this.isEditMode = false;  // Set to add mode
-    this.resetForm();  // Clear the form
+    this.isEditMode = false; 
+    this.resetForm();  
 
     // Open the modal for adding a product
     const modalElement = document.getElementById('myModal');
@@ -59,9 +58,9 @@ export class ProductComponent implements OnInit {
   }
 
   openEditProductDialog(product: Product): void {
-    this.isEditMode = true;  // Set to edit mode
+    this.isEditMode = true; 
     this.currentProductId = product.id;
-    this.newProduct = { ...product };  // Populate the form with the selected product's data
+    this.newProduct = { ...product };
 
     // Open the modal for editing the product
     const modalElement = document.getElementById('myModal');
@@ -73,7 +72,7 @@ export class ProductComponent implements OnInit {
 
   submitProduct(): void {
     if (this.isEditMode && this.currentProductId !== undefined) {
-      // Log the payload before sending
+      
       const payload = { ...this.newProduct, id: this.currentProductId };
       console.log('Updating product with payload:', payload);
   
@@ -98,7 +97,7 @@ export class ProductComponent implements OnInit {
           if (error.status === 400) {
             console.error('Bad Request: Please check the submitted data.');
             if (error.error) {
-              console.error('Error details:', error.error); // Log detailed error message
+              console.error('Error details:', error.error);
             }
           }
         },
@@ -113,7 +112,7 @@ export class ProductComponent implements OnInit {
           }
   
           this.products.push(newProduct);
-          this.resetForm(); // Reset form after submission
+          this.resetForm();
         },
         error: (error: any) => {
           console.error('Error adding product:', error);

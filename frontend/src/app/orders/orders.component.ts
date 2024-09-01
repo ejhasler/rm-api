@@ -22,10 +22,10 @@ export class OrdersComponent implements OnInit {
   newOrder: Order = {
     dateTime: '',
     menuItemIds: [],
-    menuItemIdsString: ''  // This will be used to facilitate input and display
+    menuItemIdsString: ''  
   };
-  isEditMode: boolean = false;  // To track if the modal is in edit mode
-  currentOrderId?: number;  // To store the order ID being edited
+  isEditMode: boolean = false;
+  currentOrderId?: number;  
 
   constructor(private orderService: OrderService) {}
 
@@ -38,7 +38,7 @@ export class OrdersComponent implements OnInit {
       next: (data: Order[]) => {
         this.orders = data.map(order => ({
           ...order,
-          menuItemIdsString: (order.menuItemIds || []).join(', ')  // Safely handle undefined menuItemIds
+          menuItemIdsString: (order.menuItemIds || []).join(', ') 
         }));
       },
       error: (error: any) => {
@@ -48,8 +48,8 @@ export class OrdersComponent implements OnInit {
   }
 
   openAddOrderDialog(): void {
-    this.isEditMode = false;  // Set to add mode
-    this.resetForm();  // Clear the form
+    this.isEditMode = false; 
+    this.resetForm(); 
 
     // Open the modal for adding an order
     const modalElement = document.getElementById('myModal');
@@ -60,11 +60,11 @@ export class OrdersComponent implements OnInit {
   }
 
   openEditOrderDialog(order: Order): void {
-    this.isEditMode = true;  // Set to edit mode
+    this.isEditMode = true;  
     this.currentOrderId = order.id;
-    this.newOrder = { ...order };  // Populate the form with the selected order's data
+    this.newOrder = { ...order };
 
-    // Convert menuItemIds array to a comma-separated string
+    
     this.newOrder.menuItemIdsString = order.menuItemIds.join(', ');
 
     // Open the modal for editing the order
@@ -76,11 +76,10 @@ export class OrdersComponent implements OnInit {
   }
 
   submitOrder(): void {
-    // Ensure menuItemIdsString is not undefined before splitting and mapping
     if (this.newOrder.menuItemIdsString) {
       this.newOrder.menuItemIds = this.newOrder.menuItemIdsString.split(',').map(id => parseInt(id.trim(), 10));
     } else {
-      this.newOrder.menuItemIds = [];  // If menuItemIdsString is undefined, set menuItemIds to an empty array
+      this.newOrder.menuItemIds = []; 
     }
 
     if (this.isEditMode && this.currentOrderId !== undefined) {
@@ -109,7 +108,7 @@ export class OrdersComponent implements OnInit {
           if (error.status === 400) {
             console.error('Bad Request: Please check the submitted data.');
             if (error.error) {
-              console.error('Error details:', error.error); // Log detailed error message
+              console.error('Error details:', error.error); 
             }
           }
         },
@@ -124,7 +123,7 @@ export class OrdersComponent implements OnInit {
           }
 
           this.orders.push({ ...newOrder, menuItemIdsString: newOrder.menuItemIds.join(', ') });
-          this.resetForm(); // Reset form after submission
+          this.resetForm(); 
         },
         error: (error: any) => {
           console.error('Error adding order:', error);
@@ -137,7 +136,7 @@ export class OrdersComponent implements OnInit {
     if (confirm('Are you sure you want to delete this order?')) {
       this.orderService.deleteOrder(orderId).subscribe({
         next: () => {
-          this.orders = this.orders.filter(order => order.id !== orderId); // Remove the deleted order from the list
+          this.orders = this.orders.filter(order => order.id !== orderId); 
           console.log(`Order with id ${orderId} deleted successfully.`);
         },
         error: (error: HttpErrorResponse) => {

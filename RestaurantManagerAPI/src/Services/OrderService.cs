@@ -1,17 +1,15 @@
 using Microsoft.EntityFrameworkCore;
 using RestaurantManagerAPI.Data;
 using RestaurantManagerAPI.Models;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Threading.Tasks;
-using System.Linq;
-using System;
 
 namespace RestaurantManagerAPI.Services
 {
     /// <summary>
     /// Service for managing orders in the restaurant application.
     /// </summary>
+    /// <author>Even Johan Pereira Haslerud</author>
+    /// <date>30.08.2024</date>
     public class OrderService : IOrderService
     {
         private readonly RestaurantContext _context;
@@ -60,49 +58,35 @@ namespace RestaurantManagerAPI.Services
         {
             ValidateOrder(order);
 
-            // Start a transaction to ensure atomicity
-            using var transaction = await _context.Database.BeginTransactionAsync();
+            // Check if using an in-memory database to skip transactions
+            var isInMemory = _context.Database.ProviderName == "Microsoft.EntityFrameworkCore.InMemory";
 
-            try
+            if (!isInMemory)
             {
-                foreach (var orderMenuItem in order.OrderMenuItems)
+                using var transaction = await _context.Database.BeginTransactionAsync();
+
+                try
                 {
-                    var menuItem = await _context.MenuItems
-                        .Include(mi => mi.MenuItemProducts)
-                        .ThenInclude(mip => mip.Product)
-                        .FirstOrDefaultAsync(mi => mi.Id == orderMenuItem.MenuItemId);
+                    await ProcessOrderItems(order);
+                    _context.Orders.Add(order);
+                    await _context.SaveChangesAsync();
 
-                    if (menuItem == null)
-                    {
-                        throw new KeyNotFoundException($"MenuItem with ID {orderMenuItem.MenuItemId} not found.");
-                    }
-
-                    // Check stock for each product in the menu item
-                    foreach (var menuItemProduct in menuItem.MenuItemProducts)
-                    {
-                        if (menuItemProduct.Product.PortionCount < 1)
-                        {
-                            await transaction.RollbackAsync();
-                            throw new InvalidOperationException($"Insufficient stock for product '{menuItemProduct.Product.Name}'.");
-                        }
-
-                        // Deduct the stock
-                        menuItemProduct.Product.PortionCount -= 1;
-                    }
+                    await transaction.CommitAsync();
                 }
-
+                catch
+                {
+                    await transaction.RollbackAsync();
+                    throw;
+                }
+            }
+            else
+            {
+                await ProcessOrderItems(order);
                 _context.Orders.Add(order);
                 await _context.SaveChangesAsync();
-
-                await transaction.CommitAsync();
-
-                return order;
             }
-            catch
-            {
-                await transaction.RollbackAsync();
-                throw;
-            }
+
+            return order;
         }
 
         /// <summary>
@@ -115,13 +99,17 @@ namespace RestaurantManagerAPI.Services
         {
             ValidateOrder(order);
 
-            _context.Entry(order).State = EntityState.Modified;
+            var existingOrder = await _context.Orders.FindAsync(order.Id);
+            if (existingOrder == null)
+            {
+                throw new KeyNotFoundException($"Order with ID {order.Id} does not exist.");
+            }
+
+            _context.Entry(existingOrder).CurrentValues.SetValues(order);
             await _context.SaveChangesAsync();
 
-            // Return the updated order
             return order;
         }
-
 
         /// <summary>
         /// Deletes an order by its unique identifier asynchronously.
@@ -152,6 +140,44 @@ namespace RestaurantManagerAPI.Services
                 var validationMessage = string.Join(", ", validationResults.Select(r => r.ErrorMessage));
                 throw new ArgumentException(validationMessage);
             }
+
+            // Additional validation for default DateTime
+            if (order.DateTime == default)
+            {
+                throw new ArgumentException("DateTime cannot be the default value.");
+            }
+        }
+
+        /// <summary>
+        /// Processes the order items to ensure they exist and have sufficient stock.
+        /// </summary>
+        /// <param name="order">The order to process.</param>
+        /// <returns>A task representing the asynchronous operation.</returns>
+        private async Task ProcessOrderItems(Order order)
+        {
+            foreach (var orderMenuItem in order.OrderMenuItems)
+            {
+                var menuItem = await _context.MenuItems
+                    .Include(mi => mi.MenuItemProducts)
+                    .ThenInclude(mip => mip.Product)
+                    .FirstOrDefaultAsync(mi => mi.Id == orderMenuItem.MenuItemId);
+
+                if (menuItem == null)
+                {
+                    throw new KeyNotFoundException($"MenuItem with ID {orderMenuItem.MenuItemId} not found.");
+                }
+
+                // Check stock for each product in the menu item
+                foreach (var menuItemProduct in menuItem.MenuItemProducts)
+                {
+                    if (menuItemProduct.Product.PortionCount < 1)
+                    {
+                        throw new InvalidOperationException($"Insufficient stock for product '{menuItemProduct.Product.Name}'.");
+                    }
+                    menuItemProduct.Product.PortionCount -= 1;
+                }
+            }
         }
     }
 }
+

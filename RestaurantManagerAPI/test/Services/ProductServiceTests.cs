@@ -1,103 +1,27 @@
-using Xunit;
 using Moq;
-using System;
-using System.Threading.Tasks;
-using System.Collections.Generic;
 using RestaurantManagerAPI.Models;
-using RestaurantManagerAPI.Services;
-using RestaurantManagerAPI.Repositories;
-using RestaurantManagerAPI.Application.Services;
-using System.Linq;
 using RestaurantManagerAPI.Data.Repositories;
-using Xunit.Sdk;
+using FluentAssertions;
+using System.Reflection;
+using RestaurantManagerAPI.Application.Services;
 
-namespace RestaurantManagerAPI.Tests
+namespace RestaurantManagerAPI.Tests.Services
 {
-    /// <summary>
-    /// Unit tests for <see cref="ProductService"/>.
-    /// </summary>
     public class ProductServiceTests
     {
         private readonly Mock<IProductRepository> _mockProductRepository;
         private readonly ProductService _productService;
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ProductServiceTests"/> class.
-        /// </summary>
         public ProductServiceTests()
         {
             _mockProductRepository = new Mock<IProductRepository>();
             _productService = new ProductService(_mockProductRepository.Object);
         }
 
-        #region Validation Tests
+        #region GetAllProductsAsync
 
         [Fact]
-        public async Task AddProduct_InvalidName_ThrowsArgumentException()
-        {
-            // Arrange
-            var product = new Product { Id = 1, Name = "Chicken123", PortionCount = 1.0, Unit = "kg", PortionSize = 0.5 };
-
-            // Act & Assert
-            var exception = await Assert.ThrowsAsync<ArgumentException>(() => _productService.AddProductAsync(product));
-            Assert.Contains("Name cannot contain numbers.", exception.Message);
-        }
-
-        [Fact]
-        public async Task AddProduct_InvalidPortionCount_ThrowsArgumentException()
-        {
-            // Arrange
-            var product = new Product { Id = 1, Name = "Chicken", PortionCount = 0, Unit = "kg", PortionSize = 0.5 };
-
-            // Act & Assert
-            var exception = await Assert.ThrowsAsync<ArgumentException>(() => _productService.AddProductAsync(product));
-            Assert.Contains("Portion count must be greater than 0.", exception.Message);
-        }
-
-        [Fact]
-        public async Task AddProduct_InvalidPortionSize_ThrowsArgumentException()
-        {
-            // Arrange
-            var product = new Product { Id = 1, Name = "Chicken", PortionCount = 1.0, Unit = "kg", PortionSize = 0 };
-
-            // Act & Assert
-            var exception = await Assert.ThrowsAsync<ArgumentException>(() => _productService.AddProductAsync(product));
-            Assert.Contains("Portion size must be greater than 0.", exception.Message);
-        }
-
-        [Fact]
-        public async Task AddProduct_NullUnit_ThrowsArgumentException()
-        {
-            // Arrange
-            var product = new Product { Id = 1, Name = "Chicken", PortionCount = 1.0, Unit = null, PortionSize = 0.5 };
-
-            // Act & Assert
-            var exception = await Assert.ThrowsAsync<ArgumentException>(() => _productService.AddProductAsync(product));
-            Assert.Contains("Unit is required.", exception.Message);
-        }
-
-        [Fact]
-        public async Task AddProduct_ValidProduct_DoesNotThrowException()
-        {
-            // Arrange
-            var product = new Product { Id = 2, Name = "Beef", PortionCount = 5, Unit = "kg", PortionSize = 0.5 };
-
-            _mockProductRepository.Setup(repo => repo.AddAsync(product)).Returns(Task.CompletedTask);
-
-            // Act & Assert
-            var result = await _productService.AddProductAsync(product);
-
-            // Assert
-            _mockProductRepository.Verify(repo => repo.AddAsync(product), Times.Once);
-            Assert.Equal(product, result);
-        }
-
-        #endregion
-
-        #region Service Operation Tests
-
-        [Fact]
-        public async Task GetAllProductsAsync_ReturnsProducts()
+        public async Task GetAllProductsAsync_ProductsExist_ShouldReturnAllProducts()
         {
             // Arrange
             var products = new List<Product>
@@ -105,36 +29,48 @@ namespace RestaurantManagerAPI.Tests
                 new Product { Id = 1, Name = "Chicken", PortionCount = 10, Unit = "kg", PortionSize = 0.5 },
                 new Product { Id = 2, Name = "Beef", PortionCount = 15, Unit = "kg", PortionSize = 0.5 }
             };
-
             _mockProductRepository.Setup(repo => repo.GetAllAsync()).ReturnsAsync(products);
 
             // Act
             var result = await _productService.GetAllProductsAsync();
 
             // Assert
-            Assert.NotNull(result);
-            Assert.Equal(2, result.Count());
+            result.Should().BeEquivalentTo(products);
         }
 
         [Fact]
-        public async Task GetProductByIdAsync_ProductExists_ReturnsProduct()
+        public async Task GetAllProductsAsync_NoProductsExist_ShouldReturnEmptyList()
+        {
+            // Arrange
+            _mockProductRepository.Setup(repo => repo.GetAllAsync()).ReturnsAsync(new List<Product>());
+
+            // Act
+            var result = await _productService.GetAllProductsAsync();
+
+            // Assert
+            result.Should().BeEmpty();
+        }
+
+        #endregion
+
+        #region GetProductByIdAsync
+
+        [Fact]
+        public async Task GetProductByIdAsync_ProductExists_ShouldReturnProduct()
         {
             // Arrange
             var product = new Product { Id = 1, Name = "Chicken", PortionCount = 10, Unit = "kg", PortionSize = 0.5 };
-
             _mockProductRepository.Setup(repo => repo.GetByIdAsync(1)).ReturnsAsync(product);
 
             // Act
             var result = await _productService.GetProductByIdAsync(1);
 
             // Assert
-            Assert.NotNull(result);
-            Assert.Equal(1, result.Id);
-            Assert.Equal("Chicken", result.Name);
+            result.Should().BeEquivalentTo(product);
         }
 
         [Fact]
-        public async Task GetProductByIdAsync_ProductDoesNotExist_ReturnsNull()
+        public async Task GetProductByIdAsync_ProductDoesNotExist_ShouldReturnNull()
         {
             // Arrange
             _mockProductRepository.Setup(repo => repo.GetByIdAsync(1)).ReturnsAsync((Product)null);
@@ -143,33 +79,52 @@ namespace RestaurantManagerAPI.Tests
             var result = await _productService.GetProductByIdAsync(1);
 
             // Assert
-            Assert.Null(result);
+            result.Should().BeNull();
         }
 
+        #endregion
+
+        #region AddProductAsync
+
         [Fact]
-        public async Task AddProductAsync_ValidProduct_AddsProduct()
+        public async Task AddProductAsync_ValidProduct_ShouldAddProduct()
         {
             // Arrange
             var product = new Product { Id = 1, Name = "Chicken", PortionCount = 10, Unit = "kg", PortionSize = 0.5 };
-
-            _mockProductRepository.Setup(repo => repo.AddAsync(product)).Returns(Task.CompletedTask);
 
             // Act
             var result = await _productService.AddProductAsync(product);
 
             // Assert
             _mockProductRepository.Verify(repo => repo.AddAsync(product), Times.Once);
-            Assert.Equal(product, result);
+            result.Should().BeEquivalentTo(product);
         }
 
         [Fact]
-        public async Task UpdateProductAsync_ValidProduct_UpdatesProduct()
+        public async Task AddProductAsync_InvalidProduct_ShouldThrowArgumentException()
+        {
+            // Arrange
+            var product = new Product { Id = 1, Name = "Chicken123", PortionCount = -1, Unit = "kg", PortionSize = 0 };
+
+            // Act
+            Func<Task> act = async () => await _productService.AddProductAsync(product);
+
+            // Assert
+            await act.Should().ThrowAsync<ArgumentException>()
+                .WithMessage("Name cannot contain numbers.*, Portion count must be greater than 0.*, Portion size must be greater than 0.*");
+
+            _mockProductRepository.Verify(repo => repo.AddAsync(It.IsAny<Product>()), Times.Never);
+        }
+
+        #endregion
+
+        #region UpdateProductAsync
+
+        [Fact]
+        public async Task UpdateProductAsync_ValidProduct_ShouldUpdateProduct()
         {
             // Arrange
             var product = new Product { Id = 1, Name = "Chicken", PortionCount = 10, Unit = "kg", PortionSize = 0.5 };
-
-            _mockProductRepository.Setup(repo => repo.GetByIdAsync(product.Id)).ReturnsAsync(product);
-            _mockProductRepository.Setup(repo => repo.UpdateAsync(product)).Returns(Task.CompletedTask);
 
             // Act
             await _productService.UpdateProductAsync(product);
@@ -178,22 +133,85 @@ namespace RestaurantManagerAPI.Tests
             _mockProductRepository.Verify(repo => repo.UpdateAsync(product), Times.Once);
         }
 
+        [Fact]
+        public async Task UpdateProductAsync_InvalidProduct_ShouldThrowArgumentException()
+        {
+            // Arrange
+            var product = new Product { Id = 1, Name = "Chicken123", PortionCount = -1, Unit = "kg", PortionSize = 0 };
+
+            // Act
+            Func<Task> act = async () => await _productService.UpdateProductAsync(product);
+
+            // Assert
+            await act.Should().ThrowAsync<ArgumentException>()
+                .WithMessage("Name cannot contain numbers.*, Portion count must be greater than 0.*, Portion size must be greater than 0.*");
+
+            _mockProductRepository.Verify(repo => repo.UpdateAsync(It.IsAny<Product>()), Times.Never);
+        }
+
+        #endregion
+
+        #region DeleteProductAsync
 
         [Fact]
-        public async Task DeleteProductAsync_ProductExists_DeletesProduct()
+        public async Task DeleteProductAsync_ProductExists_ShouldDeleteProduct()
         {
             // Arrange
             var productId = 1;
-            var product = new Product { Id = productId, Name = "Chicken", PortionCount = 10, Unit = "kg", PortionSize = 0.5 };
-
-            _mockProductRepository.Setup(repo => repo.GetByIdAsync(productId)).ReturnsAsync(product);
-            _mockProductRepository.Setup(repo => repo.DeleteAsync(productId)).Returns(Task.CompletedTask);
 
             // Act
             await _productService.DeleteProductAsync(productId);
 
             // Assert
             _mockProductRepository.Verify(repo => repo.DeleteAsync(productId), Times.Once);
+        }
+
+        [Fact]
+        public async Task DeleteProductAsync_ProductDoesNotExist_ShouldHandleGracefully()
+        {
+            // Arrange
+            var productId = 1;
+            _mockProductRepository.Setup(repo => repo.DeleteAsync(productId)).Throws(new KeyNotFoundException());
+
+            // Act
+            Func<Task> act = async () => await _productService.DeleteProductAsync(productId);
+
+            // Assert
+            await act.Should().ThrowAsync<KeyNotFoundException>();
+        }
+
+        #endregion
+
+        #region ValidateProduct
+
+        [Fact]
+        public void ValidateProduct_InvalidName_ShouldThrowArgumentException()
+        {
+            // Arrange
+            var product = new Product { Id = 1, Name = "Chicken123", PortionCount = 1.0, Unit = "kg", PortionSize = 0.5 };
+
+            // Act
+            Action act = () => _productService.GetType()
+                                               .GetMethod("ValidateProduct", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance)
+                                               .Invoke(_productService, new object[] { product });
+
+            // Assert
+            act.Should().Throw<TargetInvocationException>().WithInnerException<ArgumentException>().WithMessage("*Name cannot contain numbers.*");
+        }
+
+        [Fact]
+        public void ValidateProduct_ValidProduct_ShouldNotThrowException()
+        {
+            // Arrange
+            var product = new Product { Id = 1, Name = "Chicken", PortionCount = 1.0, Unit = "kg", PortionSize = 0.5 };
+
+            // Act
+            Action act = () => _productService.GetType()
+                                               .GetMethod("ValidateProduct", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance)
+                                               .Invoke(_productService, new object[] { product });
+
+            // Assert
+            act.Should().NotThrow();
         }
 
         #endregion

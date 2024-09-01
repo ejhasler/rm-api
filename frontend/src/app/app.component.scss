@@ -22,22 +22,13 @@ app-side-nav {
   background-color: rgba(34, 34, 34, 1);
   overflow-x: hidden;
   white-space: nowrap;
-  /* Remove width transition */
-}
-
-.app-side-nav-open {
-  /* No need to change width on toggle */
 }
 
 .display-area {
   position: absolute;
-  left: 250px; /* Adjust left to match the fixed width of the side nav */
-  width: calc(100% - 250px); /* Adjust width calculation */
+  left: 250px; 
+  width: calc(100% - 250px);
   transition: left 250ms ease-in, width 250ms ease-in;
-}
-
-.display-area-shrink {
-  /* This class is now redundant since display-area will always start at 250px */
 }
 
 .border-white {

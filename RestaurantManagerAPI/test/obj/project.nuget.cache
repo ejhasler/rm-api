@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "KMwZ04+MdZA=",
+  "dgSpecHash": "ty/dBcui4CU=",
   "success": true,
   "projectFilePath": "H:\\rm-api\\RestaurantManagerAPI\\test\\test.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,7 @@
     "C:\\Users\\evenj\\.nuget\\packages\\coverlet.collector\\6.0.0\\coverlet.collector.6.0.0.nupkg.sha512",
     "C:\\Users\\evenj\\.nuget\\packages\\coverlet.msbuild\\6.0.2\\coverlet.msbuild.6.0.2.nupkg.sha512",
     "C:\\Users\\evenj\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
+    "C:\\Users\\evenj\\.nuget\\packages\\fluentassertions\\6.12.0\\fluentassertions.6.12.0.nupkg.sha512",
     "C:\\Users\\evenj\\.nuget\\packages\\microsoft.aspnetcore.mvc.testing\\8.0.8\\microsoft.aspnetcore.mvc.testing.8.0.8.nupkg.sha512",
     "C:\\Users\\evenj\\.nuget\\packages\\microsoft.aspnetcore.openapi\\8.0.8\\microsoft.aspnetcore.openapi.8.0.8.nupkg.sha512",
     "C:\\Users\\evenj\\.nuget\\packages\\microsoft.aspnetcore.testhost\\8.0.8\\microsoft.aspnetcore.testhost.8.0.8.nupkg.sha512",

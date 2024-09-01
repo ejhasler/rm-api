@@ -3,17 +3,17 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 export interface Order {
-  id?: number;  // Optional for new orders
-  dateTime: string;  // Correct property name from JSON
-  menuItemIds: number[];  // Array of menu item IDs
-  menuItemIdsString?: string;  // Optional for input/display purposes in the component
+  id?: number;
+  dateTime: string; 
+  menuItemIds: number[]; 
+  menuItemIdsString?: string; 
 }
 
 @Injectable({
   providedIn: 'root'
 })
 export class OrderService {
-  private apiUrl = 'http://localhost:5230/api/Orders'; // Correct URL
+  private apiUrl = 'http://localhost:5230/api/Orders';
 
   constructor(private http: HttpClient) {}
 

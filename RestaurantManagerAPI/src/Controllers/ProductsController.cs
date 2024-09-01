@@ -2,15 +2,14 @@ using Microsoft.AspNetCore.Mvc;
 using RestaurantManagerAPI.Models;
 using RestaurantManagerAPI.Services;
 using RestaurantManagerAPI.DTOs;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using System.Linq;
 
 namespace RestaurantManagerAPI.Controllers
 {
     /// <summary>
     /// Controller for managing products in the restaurant stock.
     /// </summary>
+    /// <author>Even Johan Pereira Haslerud</author>
+    /// <date>30.08.2024</date>
     [Route("api/[controller]")]
     [ApiController]
     public class ProductsController : ControllerBase

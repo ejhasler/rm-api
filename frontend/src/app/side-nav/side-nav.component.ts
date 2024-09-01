@@ -1,11 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';  // Import RouterModule
+import { RouterModule } from '@angular/router'; 
 
 @Component({
   selector: 'app-side-nav',
   standalone: true,
-  imports: [CommonModule, RouterModule],  // Add RouterModule here
+  imports: [CommonModule, RouterModule], 
   templateUrl: './side-nav.component.html',
   styleUrls: ['./side-nav.component.scss']
 })

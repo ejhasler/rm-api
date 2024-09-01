@@ -67,9 +67,21 @@ public class OrderRepository : IOrderRepository
     /// <returns>A task that represents the asynchronous operation.</returns>
     public async Task UpdateOrderAsync(Order order)
     {
-        _context.Entry(order).State = EntityState.Modified;
-        await _context.SaveChangesAsync();
+        // Check if the order exists before attempting to update it
+        var existingOrder = await _context.Orders.FindAsync(order.Id);
+        if (existingOrder != null)
+        {
+            // Update the existing order's properties
+            _context.Entry(existingOrder).CurrentValues.SetValues(order);
+            await _context.SaveChangesAsync();
+        }
+        else
+        {
+            // Optionally, log a warning or throw a custom exception
+            throw new KeyNotFoundException($"Order with ID {order.Id} not found for update.");
+        }
     }
+
 
     /// <summary>
     /// Deletes an order by its unique identifier asynchronously.

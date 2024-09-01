@@ -474,3 +474,4 @@ h:\rm-api\RestaurantManagerAPI\test\obj\Debug\net8.0\refint\test.dll
 h:\rm-api\RestaurantManagerAPI\test\obj\Debug\net8.0\test.pdb
 h:\rm-api\RestaurantManagerAPI\test\obj\Debug\net8.0\test.genruntimeconfig.cache
 h:\rm-api\RestaurantManagerAPI\test\obj\Debug\net8.0\ref\test.dll
+H:\rm-api\RestaurantManagerAPI\test\bin\Debug\net8.0\FluentAssertions.dll

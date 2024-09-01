@@ -6,14 +6,14 @@ export interface Menu {
   id?: number;
   name: string;
   productIds: number[];
-  productIdsString?: string;  // Optional property to handle input as a string
+  productIdsString?: string;  
 }
 
 @Injectable({
   providedIn: 'root'
 })
 export class MenuService {
-    private apiUrl = 'http://localhost:5230/api/MenuItems'; // Check if this URL is correct
+    private apiUrl = 'http://localhost:5230/api/MenuItems';
   
     constructor(private http: HttpClient) { }
   
