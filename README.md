@@ -6,7 +6,7 @@
 
 <div align="center">
   <a href="#getting-started">Getting started</a> •
-  <a href="rm-api/doc/video/demo.mp4">View demo</a> •
+  <a href="rm-api/doc/demo.mp4">View demo</a> •
   <a href="#license">License</a>
 </div>
 
