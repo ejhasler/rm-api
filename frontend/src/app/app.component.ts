@@ -9,6 +9,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProductComponent } from './products/products.component';
 import { MenuComponent } from './menu/menu.component';
 import { OrdersComponent } from './orders/orders.component';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -21,7 +22,8 @@ import { OrdersComponent } from './orders/orders.component';
     DashboardComponent,
     ProductComponent,
     MenuComponent,
-    OrdersComponent
+    OrdersComponent,
+    FormsModule
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']

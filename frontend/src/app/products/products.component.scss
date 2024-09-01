@@ -1,0 +1,13 @@
+.modal-dialog {
+    margin-top: 100px; /* Adjust this value to lower the modal on the page */
+  }
+  
+  .modal-backdrop {
+    background-color: rgba(0, 0, 0, 0.1) !important; /* Make background less grey */
+  }
+  
+  .modal-content {
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  

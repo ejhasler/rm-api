@@ -109,15 +109,19 @@ namespace RestaurantManagerAPI.Services
         /// Updates an existing order asynchronously.
         /// </summary>
         /// <param name="order">The order with updated details.</param>
-        /// <returns>A task representing the asynchronous operation.</returns>
+        /// <returns>The updated order.</returns>
         /// <exception cref="ArgumentException">Thrown when the order is invalid.</exception>
-        public async Task UpdateOrderAsync(Order order)
+        public async Task<Order> UpdateOrderAsync(Order order)
         {
             ValidateOrder(order);
 
             _context.Entry(order).State = EntityState.Modified;
             await _context.SaveChangesAsync();
+
+            // Return the updated order
+            return order;
         }
+
 
         /// <summary>
         /// Deletes an order by its unique identifier asynchronously.

@@ -119,7 +119,7 @@ namespace RestaurantManagerAPI.Controllers
         /// <param name="productUpdateDto">The updated product data transfer object (DTO).</param>
         /// <returns>A status indicating the result of the update operation.</returns>
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateProduct(int id, [FromBody] ProductUpdateDto productUpdateDto)
+        public async Task<ActionResult<ProductReadDto>> UpdateProduct(int id, [FromBody] ProductUpdateDto productUpdateDto)
         {
             if (id != productUpdateDto.Id)
             {
@@ -144,8 +144,20 @@ namespace RestaurantManagerAPI.Controllers
 
             await _productService.UpdateProductAsync(existingProduct);
 
-            return NoContent();
+            // Create a DTO to return the updated product data
+            var updatedProductReadDto = new ProductReadDto
+            {
+                Id = existingProduct.Id,
+                Name = existingProduct.Name,
+                PortionCount = existingProduct.PortionCount,
+                Unit = existingProduct.Unit,
+                PortionSize = existingProduct.PortionSize
+            };
+
+            // Return the updated product data
+            return Ok(updatedProductReadDto);
         }
+
 
         /// <summary>
         /// Deletes a product by ID.

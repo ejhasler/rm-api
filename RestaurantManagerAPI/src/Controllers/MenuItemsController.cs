@@ -95,8 +95,9 @@ namespace RestaurantManagerAPI.Controllers
 
             await _menuItemService.UpdateMenuItemAsync(menuItem);
 
-            return NoContent();
+            return Ok(menuItem);
         }
+
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteMenuItem(int id)
