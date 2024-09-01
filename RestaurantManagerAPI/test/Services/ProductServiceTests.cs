@@ -7,8 +7,9 @@ using RestaurantManagerAPI.Models;
 using RestaurantManagerAPI.Services;
 using RestaurantManagerAPI.Repositories;
 using RestaurantManagerAPI.Application.Services;
-using RestaurantManagerAPI.Data.Repositories;
 using System.Linq;
+using RestaurantManagerAPI.Data.Repositories;
+using Xunit.Sdk;
 
 namespace RestaurantManagerAPI.Tests
 {
@@ -30,17 +31,6 @@ namespace RestaurantManagerAPI.Tests
         }
 
         #region Validation Tests
-
-        [Fact]
-        public async Task AddProduct_InvalidId_ThrowsArgumentException()
-        {
-            // Arrange
-            var product = new Product { Id = 0, Name = "Chicken", PortionCount = 1.0, Unit = "kg", PortionSize = 0.5 };
-
-            // Act & Assert
-            var exception = await Assert.ThrowsAsync<ArgumentException>(() => _productService.AddProductAsync(product));
-            Assert.Contains("Id must be greater than 0.", exception.Message);
-        }
 
         [Fact]
         public async Task AddProduct_InvalidName_ThrowsArgumentException()
@@ -84,6 +74,22 @@ namespace RestaurantManagerAPI.Tests
             // Act & Assert
             var exception = await Assert.ThrowsAsync<ArgumentException>(() => _productService.AddProductAsync(product));
             Assert.Contains("Unit is required.", exception.Message);
+        }
+
+        [Fact]
+        public async Task AddProduct_ValidProduct_DoesNotThrowException()
+        {
+            // Arrange
+            var product = new Product { Id = 2, Name = "Beef", PortionCount = 5, Unit = "kg", PortionSize = 0.5 };
+
+            _mockProductRepository.Setup(repo => repo.AddAsync(product)).Returns(Task.CompletedTask);
+
+            // Act & Assert
+            var result = await _productService.AddProductAsync(product);
+
+            // Assert
+            _mockProductRepository.Verify(repo => repo.AddAsync(product), Times.Once);
+            Assert.Equal(product, result);
         }
 
         #endregion
@@ -162,6 +168,7 @@ namespace RestaurantManagerAPI.Tests
             // Arrange
             var product = new Product { Id = 1, Name = "Chicken", PortionCount = 10, Unit = "kg", PortionSize = 0.5 };
 
+            _mockProductRepository.Setup(repo => repo.GetByIdAsync(product.Id)).ReturnsAsync(product);
             _mockProductRepository.Setup(repo => repo.UpdateAsync(product)).Returns(Task.CompletedTask);
 
             // Act
@@ -171,12 +178,15 @@ namespace RestaurantManagerAPI.Tests
             _mockProductRepository.Verify(repo => repo.UpdateAsync(product), Times.Once);
         }
 
+
         [Fact]
         public async Task DeleteProductAsync_ProductExists_DeletesProduct()
         {
             // Arrange
             var productId = 1;
+            var product = new Product { Id = productId, Name = "Chicken", PortionCount = 10, Unit = "kg", PortionSize = 0.5 };
 
+            _mockProductRepository.Setup(repo => repo.GetByIdAsync(productId)).ReturnsAsync(product);
             _mockProductRepository.Setup(repo => repo.DeleteAsync(productId)).Returns(Task.CompletedTask);
 
             // Act

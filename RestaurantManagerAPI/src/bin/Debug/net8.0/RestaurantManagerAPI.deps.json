@@ -43,6 +43,7 @@
           "Microsoft.EntityFrameworkCore.Sqlite": "8.0.8",
           "Swashbuckle.AspNetCore": "6.7.3",
           "System.Data.SQLite": "1.0.118",
+          "coverlet.msbuild": "6.0.2",
           "Microsoft.AspNetCore.Antiforgery": "8.0.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "8.0.0.0",
           "Microsoft.AspNetCore.Authentication.BearerToken": "8.0.0.0",
@@ -352,6 +353,7 @@
           "RestaurantManagerAPI.dll": {}
         }
       },
+      "coverlet.msbuild/6.0.2": {},
       "EntityFramework/6.4.4": {
         "dependencies": {
           "Microsoft.CSharp": "4.7.0",
@@ -3357,6 +3359,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "coverlet.msbuild/6.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-8b4jBNH7mcQy1otyQErjjIUuGD74XxKZ1wvDufbY7jhWwckl7wIa+icjwdPYeI0aYMS4Tp63LIZvyMFjWwOMDw==",
+      "path": "coverlet.msbuild/6.0.2",
+      "hashPath": "coverlet.msbuild.6.0.2.nupkg.sha512"
     },
     "EntityFramework/6.4.4": {
       "type": "package",

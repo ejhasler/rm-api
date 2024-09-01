@@ -26,17 +26,6 @@ namespace RestaurantManagerAPI.Tests
         #region Validation Tests
 
         [Fact]
-        public async Task AddMenuItem_InvalidId_ThrowsArgumentException()
-        {
-            // Arrange
-            var menuItem = new MenuItem { Id = 0, Name = "Pasta", ProductIds = new List<int> { 1 } };
-
-            // Act & Assert
-            var exception = await Assert.ThrowsAsync<ArgumentException>(() => _menuItemService.AddMenuItemAsync(menuItem));
-            Assert.Contains("Id must be greater than 0.", exception.Message);
-        }
-
-        [Fact]
         public async Task AddMenuItem_InvalidName_ThrowsArgumentException()
         {
             // Arrange

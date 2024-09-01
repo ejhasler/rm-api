@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "yZ9Dz/IWtE4=",
+  "dgSpecHash": "eyhNNIGun9s=",
   "success": true,
   "projectFilePath": "H:\\rm-api\\RestaurantManagerAPI\\src\\RestaurantManagerAPI.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\evenj\\.nuget\\packages\\coverlet.msbuild\\6.0.2\\coverlet.msbuild.6.0.2.nupkg.sha512",
     "C:\\Users\\evenj\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
     "C:\\Users\\evenj\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\evenj\\.nuget\\packages\\microsoft.aspnetcore.mvc.testing\\8.0.8\\microsoft.aspnetcore.mvc.testing.8.0.8.nupkg.sha512",
