@@ -1,0 +1,73 @@
+<div class="container">
+    <h2>Menu List</h2>
+    <!-- Button to trigger the add menu modal -->
+    <button type="button" class="btn btn-primary" (click)="openAddMenuDialog()">
+      Add Menu
+    </button>
+  
+    <!-- Modal for Adding/Editing a Menu -->
+    <div class="modal fade" id="menuModal" data-bs-backdrop="false" data-bs-keyboard="false">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+  
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <h4 class="modal-title">{{ isEditMode ? 'Edit Menu' : 'Add New Menu' }}</h4>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+  
+          <!-- Modal body -->
+          <div class="modal-body">
+            <div class="mb-3 mt-3">
+              <label for="name" class="form-label">Name:</label>
+              <input type="text" class="form-control" id="name" [(ngModel)]="newMenu.name" placeholder="Enter menu name" name="name">
+            </div>
+            <div class="mb-3 mt-3">
+              <label for="productIds" class="form-label">Product IDs (comma-separated):</label>
+              <input type="text" class="form-control" id="productIds" [(ngModel)]="newMenu.productIdsString" placeholder="Enter product IDs" name="productIds">
+            </div>
+          </div>
+  
+          <!-- Modal footer -->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-primary" (click)="submitMenu()" data-bs-dismiss="modal">{{ isEditMode ? 'Update Menu' : 'Add Menu' }}</button>
+          </div>
+  
+        </div>
+      </div>
+    </div>
+  
+    <!-- Menu Table -->
+    <table class="table table-bordered mt-3">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Product IDs</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let menu of menus">
+          <td>{{ menu.id }}</td>
+          <td>{{ menu.name }}</td>
+          <td>{{ menu.productIds.join(', ') }}</td>
+          <td>
+            <!-- Button to trigger edit modal -->
+            <button type="button" class="btn btn-warning me-2" (click)="openEditMenuDialog(menu)">
+              <i class="fa-solid fa-pen"></i>
+            </button>
+            <!-- Button to delete menu -->
+            <button 
+              type="button" 
+              class="btn btn-danger" 
+              (click)="menu.id !== undefined ? deleteMenu(menu.id) : null">
+              <i class="fa-solid fa-trash"></i>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

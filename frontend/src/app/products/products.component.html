@@ -1,0 +1,84 @@
+<div class="container">
+  <h2>Product List</h2>
+  <!-- Button to trigger the add product modal -->
+  <button type="button" class="btn btn-primary" (click)="openAddProductDialog()">
+    Add Product
+  </button>
+
+  <!-- Modal for Adding/Editing a Product -->
+  <div class="modal fade" id="myModal" data-bs-backdrop="false" data-bs-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">{{ isEditMode ? 'Edit Product' : 'Add New Product' }}</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body">
+          <div class="mb-3 mt-3">
+            <label for="name" class="form-label">Name:</label>
+            <input type="text" class="form-control" id="name" [(ngModel)]="newProduct.name" placeholder="Enter name" name="name">
+          </div>
+          <div class="mb-3 mt-3">
+            <label for="portionCount" class="form-label">Portion Count:</label>
+            <input type="number" class="form-control" id="portionCount" [(ngModel)]="newProduct.portionCount" placeholder="Enter Portion Count" name="portionCount">
+          </div>
+          <div class="mb-3 mt-3">
+            <label for="unit" class="form-label">Unit:</label>
+            <input type="text" class="form-control" id="unit" [(ngModel)]="newProduct.unit" placeholder="Enter unit" name="unit">
+          </div>
+          <div class="mb-3 mt-3">
+            <label for="portionSize" class="form-label">Portion Size:</label>
+            <input type="number" class="form-control" id="portionSize" [(ngModel)]="newProduct.portionSize" placeholder="Enter Portion Size" name="portionSize">
+          </div>
+        </div>
+
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-primary" (click)="submitProduct()" data-bs-dismiss="modal">{{ isEditMode ? 'Update Product' : 'Add Product' }}</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Product Table -->
+  <table class="table table-bordered mt-3">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Portion Count</th>
+        <th>Unit</th>
+        <th>Portion Size</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products">
+        <td>{{ product.id }}</td>
+        <td>{{ product.name }}</td>
+        <td>{{ product.portionCount }}</td>
+        <td>{{ product.unit }}</td>
+        <td>{{ product.portionSize }}</td>
+        <td>
+          <!-- Button to trigger edit modal -->
+          <button type="button" class="btn btn-warning me-2" (click)="openEditProductDialog(product)">
+            <i class="fa-solid fa-pen"></i>
+          </button>
+          <!-- Button to trigger delete modal (if needed) -->
+          <button 
+            type="button" 
+            class="btn btn-danger" 
+            (click)="product.id !== undefined ? deleteProduct(product.id) : null">
+            <i class="fa-solid fa-trash"></i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

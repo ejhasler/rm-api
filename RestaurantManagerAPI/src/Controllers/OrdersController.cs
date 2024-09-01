@@ -72,7 +72,7 @@ namespace RestaurantManagerAPI.Controllers
 
             return CreatedAtAction(nameof(GetOrder), new { id = orderReadDto.Id }, orderReadDto);
         }
-
+        
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateOrder(int id, OrderUpdateDto orderUpdateDto)
         {
@@ -81,17 +81,37 @@ namespace RestaurantManagerAPI.Controllers
                 return BadRequest("ID mismatch.");
             }
 
-            var order = new Order
+            // Check if the order exists
+            var existingOrder = await _orderService.GetOrderByIdAsync(id);
+            if (existingOrder == null)
             {
-                Id = orderUpdateDto.Id,
-                DateTime = orderUpdateDto.DateTime,
-                OrderMenuItems = orderUpdateDto.MenuItemIds.Select(id => new OrderMenuItem { MenuItemId = id }).ToList()
+                return NotFound("Order not found.");
+            }
+
+            // Update the order fields
+            existingOrder.DateTime = orderUpdateDto.DateTime;
+            existingOrder.OrderMenuItems = orderUpdateDto.MenuItemIds.Select(id => new OrderMenuItem { MenuItemId = id }).ToList();
+
+            // Perform the update and get the updated order
+            var updatedOrder = await _orderService.UpdateOrderAsync(existingOrder);
+
+            if (updatedOrder == null)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, "Error updating the order.");
+            }
+
+            // Optionally, return the updated order data
+            var orderReadDto = new OrderReadDto
+            {
+                Id = updatedOrder.Id,
+                DateTime = updatedOrder.DateTime,
+                MenuItemIds = updatedOrder.OrderMenuItems.Select(omi => omi.MenuItemId).ToList()
             };
 
-            await _orderService.UpdateOrderAsync(order);
-
-            return NoContent();
+            return Ok(orderReadDto); // Return the updated order
         }
+
+
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteOrder(int id)

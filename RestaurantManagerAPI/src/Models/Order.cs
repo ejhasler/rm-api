@@ -19,8 +19,6 @@ public class Order {
     /// a positive integer greater than zero.
     /// </value>
     /// <example>1</example>
-    [Required(ErrorMessage = "Id is required.")]
-    [Range(1, int.MaxValue, ErrorMessage = "Id must be greater than 0.")]
     public int Id { get; set; }
 
     /// <summary>

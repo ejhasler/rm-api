@@ -1,0 +1,70 @@
+<div class="container">
+    <h2>Order List</h2>
+    <button type="button" class="btn btn-primary mb-3" (click)="openAddOrderDialog()">
+      Add Order
+    </button>
+  
+    <!-- Modal for Adding/Editing an Order -->
+    <div class="modal fade" id="myModal" data-bs-backdrop="false" data-bs-keyboard="false">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+  
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <h4 class="modal-title">{{ isEditMode ? 'Edit Order' : 'Add New Order' }}</h4>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+  
+          <!-- Modal body -->
+          <div class="modal-body">
+            <div class="mb-3 mt-3">
+              <label for="orderDate" class="form-label">Order Date:</label>
+              <input type="datetime-local" class="form-control" id="orderDate" [(ngModel)]="newOrder.dateTime" placeholder="Enter order date" name="orderDate">
+            </div>
+            <div class="mb-3 mt-3">
+              <label for="menuItemIds" class="form-label">Menu Item IDs (comma-separated):</label>
+              <input type="text" class="form-control" id="menuItemIds" [(ngModel)]="newOrder.menuItemIdsString" placeholder="Enter menu item IDs" name="menuItemIds">
+            </div>
+          </div>
+  
+          <!-- Modal footer -->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-primary" (click)="submitOrder()" data-bs-dismiss="modal">{{ isEditMode ? 'Update Order' : 'Add Order' }}</button>
+          </div>
+  
+        </div>
+      </div>
+    </div>
+  
+    <!-- Order Table -->
+    <table class="table table-bordered mt-3">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Order Date</th>
+          <th>Menu Item IDs</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let order of orders">
+          <td>{{ order.id }}</td>
+          <td>{{ order.dateTime }}</td>
+          <td>{{ order.menuItemIdsString }}</td>
+          <td>
+            <button type="button" class="btn btn-warning me-2" (click)="openEditOrderDialog(order)">
+              <i class="fa-solid fa-pen"></i>
+            </button>
+            <button 
+              type="button" 
+              class="btn btn-danger" 
+              (click)="order.id !== undefined ? deleteOrder(order.id) : null">
+              <i class="fa-solid fa-trash"></i>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
