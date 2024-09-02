@@ -63,8 +63,6 @@ Unit tests for the backend are located in the test directory, utilizing JUnit te
 ### Frontend
 The frontend directory contains the Angular application that serves as the admin interface for managing restaurant operations. It is built using Angular with TypeScript and styled using Bootstrap and SCSS, providing a user-friendly UI for administrators.
 
-A diagram of the project structure can be found [here](Fillin).
-
 ## Architecture
 The architecture of the Restaurant Manager application is designed with a focus on scalability, maintainability, and clean code practices. The application follows a layered architecture pattern, which separates concerns and promotes a clean separation between the different components of the application.
 
