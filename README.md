@@ -83,7 +83,6 @@ The architecture of the Restaurant Manager application is designed with a focus 
 | -------- | ---------------------------------------- |
 | `GET`    | Used to retrieve a single item or a collection of items. |
 | `POST`   | Used when creating new items e.g. a new user, post, comment etc. |
-| `PATCH`  | Used to update one or more fields on an item e.g. update name of product. |
 | `PUT`    | Used to replace a whole item (all fields) with new data. |
 | `DELETE` | Used to delete an item.                  |
 
